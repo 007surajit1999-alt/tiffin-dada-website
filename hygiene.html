@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<title>Hygiene at Tiffin Dada — Clean Kitchen, Honest Process</title>
+<style>
+  :root{
+    --cream:#FBF1D8;
+    --turmeric:#E8A93A;
+    --turmeric-deep:#D6871C;
+    --maroon:#8C1F1F;
+    --maroon-deep:#6B1414;
+    --brown:#3A2417;
+    --steel:#B9BEC4;
+    --steel-dark:#8A9099;
+    --leaf:#4C7A3D;
+    --white:#FFFDF8;
+    --shadow: 0 8px 24px rgba(58,36,23,0.15);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins', 'Segoe UI', sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  h1,h2,h3{font-family:'Baloo 2', sans-serif; font-weight:700; letter-spacing:-0.005em;}
+  .scribble{font-family:'Caveat', cursive; font-weight:700;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  .checker-band{
+    height:14px;
+    background-image: repeating-linear-gradient(45deg, var(--maroon) 0, var(--maroon) 10px, var(--white) 10px, var(--white) 20px);
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky; top:0; z-index:100;
+    background:var(--cream);
+    border-bottom:3px solid var(--brown);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 6vw;
+  }
+  .nav-logo{display:flex; align-items:center; gap:12px;}
+  .nav-logo .logo-dot{width:44px; height:44px; border-radius:50%; border:2px solid var(--maroon); background:var(--turmeric); display:flex; align-items:center; justify-content:center; font-size:1.3rem;}
+  .nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.4rem; color:var(--maroon); font-weight:700;}
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--maroon); color:var(--white); padding:10px 22px; border-radius:30px;
+    font-weight:700; font-size:0.9rem; box-shadow:var(--shadow); border:2px solid var(--brown);
+    transition:transform .15s;
+  }
+  .back-link:hover{transform:translateY(-2px);}
+
+  section{padding:80px 6vw;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 50px;}
+  .eyebrow-tag{
+    display:inline-block; color:var(--maroon); font-weight:700; letter-spacing:0.06em;
+    text-transform:uppercase; font-size:0.8rem; margin-bottom:10px;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.8vw,2.6rem); color:var(--brown); margin-bottom:12px;}
+  .section-head p{color:#5a4433; font-size:1rem; line-height:1.6;}
+
+  /* ===== HERO ===== */
+  .hygiene-hero{
+    text-align:center; max-width:800px; margin:0 auto; padding:70px 6vw 40px;
+    position:relative;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(76,122,61,0.18), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(232,169,58,0.25), transparent 40%),
+      var(--cream);
+  }
+  .hygiene-hero .eyebrow-tag{margin-bottom:14px;}
+  .hygiene-hero h1{
+    font-size:clamp(2.1rem, 4.8vw, 3.2rem); line-height:1.12; margin-bottom:16px; color:var(--brown);
+  }
+  .hygiene-hero h1 .accent{color:var(--leaf);}
+  .hygiene-hero p{font-size:1.05rem; color:#5a4433; line-height:1.6; margin-bottom:26px;}
+  .hero-badge-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center;}
+  .h-badge{
+    display:flex; align-items:center; gap:8px; background:var(--white); border:2px solid var(--brown);
+    padding:9px 18px; border-radius:30px; font-weight:700; font-size:0.85rem; box-shadow:var(--shadow);
+  }
+  .h-badge .dot{width:8px; height:8px; border-radius:50%; background:var(--leaf);}
+
+  /* ===== IMAGE PLACEHOLDER ===== */
+  .img-slot{
+    border-radius:18px; border:3px dashed var(--steel-dark); background:repeating-linear-gradient(45deg, var(--white), var(--white) 12px, #f2e9d4 12px, #f2e9d4 24px);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    color:var(--steel-dark); gap:8px; padding:18px;
+  }
+  .img-slot .icon{font-size:2rem;}
+  .img-slot .lbl{font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;}
+
+  /* ===== PROCESS TIMELINE ===== */
+  .process-section{background:var(--white); border-top:3px solid var(--brown); border-bottom:3px solid var(--brown);}
+  .process-track{
+    max-width:1050px; margin:0 auto; display:flex; flex-direction:column; gap:46px;
+  }
+  .process-step{
+    display:grid; grid-template-columns:auto 1fr 1.1fr; gap:26px; align-items:center;
+  }
+  .process-step.rev{grid-template-columns:1.1fr 1fr auto;}
+  .process-step.rev .step-photo{order:1;}
+  .process-step.rev .step-copy{order:2;}
+  .process-step.rev .step-num-col{order:3;}
+  .step-num-col{
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .step-num{
+    width:52px; height:52px; border-radius:50%; background:var(--maroon); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem;
+    font-family:'Baloo 2',sans-serif; box-shadow:var(--shadow); flex-shrink:0;
+  }
+  .step-line{width:3px; flex:1; background:var(--steel); min-height:30px;}
+  .process-step:last-child .step-line{display:none;}
+  .step-copy .step-icon{font-size:2.2rem; margin-bottom:8px;}
+  .step-copy h3{font-size:1.25rem; color:var(--brown); margin-bottom:6px;}
+  .step-copy p{font-size:0.92rem; color:#5a4433; line-height:1.5;}
+  .step-photo.img-slot{aspect-ratio:4/3;}
+  @media(max-width:820px){
+    .process-step, .process-step.rev{grid-template-columns:auto 1fr; grid-template-areas:"num copy" "photo photo";}
+    .process-step .step-num-col, .process-step.rev .step-num-col{grid-area:num;}
+    .process-step .step-copy, .process-step.rev .step-copy{grid-area:copy;}
+    .process-step .step-photo, .process-step.rev .step-photo{grid-area:photo; order:0;}
+  }
+
+  /* ===== CYCLE LOOP ===== */
+  .cycle-section{background:var(--cream); text-align:center;}
+  .cycle-wrap{
+    max-width:600px; margin:0 auto; background:var(--white); border:3px solid var(--brown);
+    border-radius:24px; padding:40px 30px; box-shadow:var(--shadow);
+  }
+  .cycle-icon{font-size:2.6rem; margin-bottom:14px;}
+  .cycle-wrap h3{font-size:1.3rem; color:var(--brown); margin-bottom:10px;}
+  .cycle-wrap p{font-size:0.95rem; color:#5a4433; line-height:1.6;}
+
+  /* ===== QUICK GRID: DO'S ===== */
+  .dos-section{background:var(--white);}
+  .dos-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:22px;
+    max-width:1050px; margin:0 auto;
+  }
+  .do-card{
+    text-align:center; background:var(--cream); border:2px solid var(--brown); border-radius:18px;
+    padding:26px 18px;
+  }
+  .do-card .icon{font-size:2.2rem; margin-bottom:10px;}
+  .do-card h4{font-size:0.98rem; color:var(--maroon); margin-bottom:4px;}
+  .do-card p{font-size:0.8rem; color:#5a4433; line-height:1.4;}
+
+  /* ===== GALLERY ===== */
+  .gallery-section{background:var(--cream); border-top:3px solid var(--brown);}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; max-width:1050px; margin:0 auto;
+  }
+  .gallery-grid .img-slot{aspect-ratio:1/1;}
+  @media(max-width:700px){ .gallery-grid{grid-template-columns:1fr 1fr;} }
+
+  /* ===== TRUST STRIP ===== */
+  .trust-strip-section{background:var(--maroon); color:var(--white); text-align:center; border-top:3px solid var(--brown); border-bottom:3px solid var(--brown);}
+  .trust-strip-section .eyebrow-tag{color:var(--turmeric);}
+  .trust-strip-section h2{color:var(--white); font-size:clamp(1.6rem,3.2vw,2.2rem); max-width:650px; margin:0 auto 30px;}
+  .trust-mini{display:flex; gap:16px; flex-wrap:wrap; justify-content:center; max-width:800px; margin:0 auto;}
+  .trust-mini span{
+    background:rgba(255,255,255,0.1); border:2px solid var(--turmeric); border-radius:30px;
+    padding:10px 20px; font-weight:700; font-size:0.85rem;
+  }
+
+  /* ===== CTA ===== */
+  .hygiene-cta{background:var(--cream); text-align:center;}
+  .hygiene-cta h2{margin-bottom:12px;}
+  .hygiene-cta p{color:#5a4433; margin-bottom:26px; max-width:480px; margin-left:auto; margin-right:auto;}
+  .cta-btns{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--maroon); color:var(--white); padding:16px 32px; border-radius:40px;
+    font-weight:700; font-size:1.05rem; box-shadow:var(--shadow); border:2px solid var(--brown);
+    display:inline-flex; align-items:center; gap:10px; transition:transform .15s;
+  }
+  .btn-primary:hover{transform:translateY(-3px);}
+  .btn-secondary{
+    background:transparent; color:var(--brown); padding:16px 30px; border-radius:40px;
+    font-weight:700; font-size:1.05rem; border:2px solid var(--brown); transition:background .15s;
+  }
+  .btn-secondary:hover{background:var(--white);}
+
+  footer{
+    background:var(--brown); color:var(--cream); padding:40px 6vw 26px; text-align:center;
+  }
+  footer .foot-logo{font-family:'Baloo 2', sans-serif; font-size:1.5rem; color:var(--turmeric); margin-bottom:8px; font-weight:700;}
+  footer p{font-size:0.85rem; opacity:0.75;}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.visible{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="tiffin-dada-logo.png" alt="Tiffin Dada Logo" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
+    <span>Tiffin Dada</span>
+  </div>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<div class="hygiene-hero">
+  <span class="eyebrow-tag">Our Hygiene Promise</span>
+  <h1>Clean kitchen. <span class="accent">Honest process.</span> Every single day. 🧼</h1>
+  <p>No secrets, no shortcuts. Here's exactly how your tiffin gets from the market to your desk.</p>
+  <div class="hero-badge-row">
+    <div class="h-badge"><span class="dot"></span> Fresh daily sourcing</div>
+    <div class="h-badge"><span class="dot"></span> Washed before cooked</div>
+    <div class="h-badge"><span class="dot"></span> Deep-cleaned nightly</div>
+  </div>
+</div>
+
+<div class="checker-band"></div>
+
+<!-- PROCESS TIMELINE -->
+<section class="process-section">
+  <div class="section-head reveal">
+    <span class="eyebrow-tag">The Process</span>
+    <h2>From market to tiffin box</h2>
+    <p>Six simple steps. Same routine, every single day.</p>
+  </div>
+
+  <div class="process-track">
+
+    <!-- STEP 1 -->
+    <div class="process-step reveal">
+      <div class="step-num-col">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-copy">
+        <div class="step-icon">🛒</div>
+        <h3>Fresh from the market</h3>
+        <p>Every morning, someone from our team goes straight to the local market for fresh vegetables, fish, and everyday essentials.</p>
+      </div>
+      <div class="step-photo img-slot">
+        <span class="icon">📷</span>
+        <span class="lbl">Add market photo</span>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="process-step rev reveal">
+      <div class="step-photo img-slot">
+        <span class="icon">📷</span>
+        <span class="lbl">Add washing photo</span>
+      </div>
+      <div class="step-copy">
+        <div class="step-icon">💧</div>
+        <h3>Washed before it's cut</h3>
+        <p>Every single ingredient is rinsed clean in fresh water before it ever touches a knife.</p>
+      </div>
+      <div class="step-num-col">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="process-step reveal">
+      <div class="step-num-col">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-copy">
+        <div class="step-icon">🍳</div>
+        <h3>Cooked in a real home kitchen</h3>
+        <p>No commercial line, no mass canteen — just a clean home kitchen, cooked in small daily batches.</p>
+      </div>
+      <div class="step-photo img-slot">
+        <span class="icon">📷</span>
+        <span class="lbl">Add cooking photo</span>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="process-step rev reveal">
+      <div class="step-photo img-slot">
+        <span class="icon">📷</span>
+        <span class="lbl">Add oil / ingredients photo</span>
+      </div>
+      <div class="step-copy">
+        <div class="step-icon">🫒</div>
+        <h3>Good oil, used sparingly</h3>
+        <p>We cook with high-quality oil — and use less of it, so meals stay light without losing flavour.</p>
+      </div>
+      <div class="step-num-col">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="process-step reveal">
+      <div class="step-num-col">
+        <div class="step-num">5</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-copy">
+        <div class="step-icon">📦</div>
+        <h3>Packed and sent out fresh</h3>
+        <p>Once cooking wraps up, tiffins are packed the same day and sent straight out for delivery.</p>
+      </div>
+      <div class="step-photo img-slot">
+        <span class="icon">📷</span>
+        <span class="lbl">Add packing photo</span>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="process-step rev reveal">
+      <div class="step-photo img-slot">
+        <span class="icon">📷</span>
+        <span class="lbl">Add cleaning photo</span>
+      </div>
+      <div class="step-copy">
+        <div class="step-icon">🧽</div>
+        <h3>Kitchen deep-cleaned, every night</h3>
+        <p>After every single day's cooking is done, the entire kitchen is scrubbed with soap and disinfectant — top to bottom.</p>
+      </div>
+      <div class="step-num-col">
+        <div class="step-num">6</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CYCLE -->
+<section class="cycle-section reveal">
+  <div class="cycle-wrap">
+    <div class="cycle-icon">🔁</div>
+    <h3>Then the next day starts exactly the same way</h3>
+    <p>Fresh market run, fresh wash, fresh cook, fresh clean. No skipped steps — that's the whole promise.</p>
+  </div>
+</section>
+
+<!-- QUICK DO'S -->
+<section class="dos-section">
+  <div class="section-head reveal">
+    <span class="eyebrow-tag">At A Glance</span>
+    <h2>What we always do</h2>
+  </div>
+  <div class="dos-grid">
+    <div class="do-card reveal">
+      <div class="icon">🥬</div>
+      <h4>Fresh, not stored</h4>
+      <p>Bought same-day, not stocked for later.</p>
+    </div>
+    <div class="do-card reveal">
+      <div class="icon">🚿</div>
+      <h4>Washed thoroughly</h4>
+      <p>Clean water, every ingredient, every time.</p>
+    </div>
+    <div class="do-card reveal">
+      <div class="icon">🧴</div>
+      <h4>Less oil</h4>
+      <p>Good quality, used in moderation.</p>
+    </div>
+    <div class="do-card reveal">
+      <div class="icon">🧼</div>
+      <h4>Nightly deep clean</h4>
+      <p>Soap and disinfectant, whole kitchen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY PLACEHOLDER -->
+<section class="gallery-section">
+  <div class="section-head reveal">
+    <span class="eyebrow-tag">Inside The Kitchen</span>
+    <h2>See it for yourself</h2>
+    <p>Real photos from our kitchen — coming soon.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="img-slot reveal"><span class="icon">📷</span><span class="lbl">Kitchen photo</span></div>
+    <div class="img-slot reveal"><span class="icon">📷</span><span class="lbl">Ingredients photo</span></div>
+    <div class="img-slot reveal"><span class="icon">📷</span><span class="lbl">Cleaning photo</span></div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip-section reveal">
+  <span class="eyebrow-tag">No Shortcuts</span>
+  <h2>Hygiene isn't a feature we advertise — it's just how the kitchen runs.</h2>
+  <div class="trust-mini">
+    <span>🛒 Daily fresh sourcing</span>
+    <span>💧 Washed before cooked</span>
+    <span>🫒 Quality oil, less of it</span>
+    <span>🧼 Cleaned every night</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="hygiene-cta reveal">
+  <h2>Ready to taste the difference?</h2>
+  <p>See today's menu and pick a plan that fits your day.</p>
+  <div class="cta-btns">
+    <a href="index.html#menu" class="btn-primary">🍱 See Today's Menu</a>
+    <a href="index.html#plans" class="btn-secondary">View Plans</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">Tiffin Dada</div>
+  <p>&copy; 2026 Tiffin Dada. Clean kitchen, honest food, in Kolkata.</p>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

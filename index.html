@@ -397,6 +397,70 @@
 
   .plans-footnote{max-width:1150px; margin:26px auto 0; font-size:0.8rem; color:#8a7560; text-align:center;}
 
+  /* ===== PLANS EXPLAINER ===== */
+  .explainer-section{background:var(--cream); border-top:3px solid var(--brown);}
+  .explainer-steps{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:0;
+    max-width:1100px; margin:0 auto 64px; position:relative;
+  }
+  .explainer-step{
+    text-align:center; padding:0 20px; position:relative;
+  }
+  .explainer-step .step-num{
+    width:40px; height:40px; border-radius:50%; background:var(--maroon); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Baloo 2',sans-serif;
+    margin:0 auto 16px; font-size:1.1rem; box-shadow:var(--shadow); position:relative; z-index:2;
+  }
+  .explainer-step .step-icon{font-size:2.4rem; margin-bottom:12px;}
+  .explainer-step h4{font-size:1.1rem; color:var(--brown); margin-bottom:8px;}
+  .explainer-step p{font-size:0.88rem; color:#5a4433; line-height:1.5;}
+  .explainer-step::after{
+    content:''; position:absolute; top:20px; left:calc(50% + 60px); right:calc(-50% + 60px);
+    height:3px; background:repeating-linear-gradient(90deg, var(--steel-dark) 0 8px, transparent 8px 16px);
+    z-index:1;
+  }
+  .explainer-step:last-child::after{display:none;}
+  @media(max-width:800px){
+    .explainer-steps{grid-template-columns:1fr; gap:36px;}
+    .explainer-step::after{display:none;}
+  }
+
+  .day-visual{
+    max-width:1000px; margin:0 auto; background:var(--white); border:3px solid var(--brown);
+    border-radius:24px; padding:40px; box-shadow:var(--shadow);
+  }
+  .day-visual-head{text-align:center; margin-bottom:32px;}
+  .day-visual-head h3{font-size:1.4rem; color:var(--brown); margin-bottom:8px;}
+  .day-visual-head p{font-size:0.92rem; color:#5a4433;}
+  .day-track{
+    display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;
+  }
+  .day-stop{
+    flex:1; min-width:110px; text-align:center; position:relative;
+  }
+  .day-stop .stop-circle{
+    width:56px; height:56px; border-radius:50%; background:var(--cream); border:2px solid var(--maroon);
+    display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin:0 auto 10px;
+  }
+  .day-stop .stop-time{font-size:0.72rem; font-weight:700; color:var(--turmeric-deep); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;}
+  .day-stop .stop-label{font-size:0.85rem; font-weight:700; color:var(--brown);}
+  .day-connector{flex:0 0 auto; width:40px; height:2px; background:var(--steel); margin-top:-30px;}
+  @media(max-width:750px){
+    .day-track{flex-direction:column;}
+    .day-connector{width:2px; height:24px; margin:0;}
+  }
+
+  .plan-compare-strip{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:0; max-width:1000px; margin:36px auto 0;
+    border-top:2px dashed var(--steel); padding-top:28px;
+  }
+  .compare-col{text-align:center; padding:0 16px;}
+  .compare-col .compare-label{font-size:0.78rem; font-weight:700; color:var(--steel-dark); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;}
+  .compare-col .compare-value{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.3rem; color:var(--maroon-deep);}
+  @media(max-width:750px){
+    .plan-compare-strip{grid-template-columns:1fr; gap:20px;}
+  }
+
   /* ===== WHY ===== */
   .why-section{background:var(--cream); border-top:3px solid var(--brown); border-bottom:3px solid var(--brown);}
   .why-grid{
@@ -453,13 +517,14 @@
 
 <nav>
   <div class="nav-logo">
-    <div style="width:44px; height:44px; border-radius:50%; border:2px solid var(--maroon); background:var(--turmeric); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">🍱</div>
+    <img src="tiffin-dada-logo.png" alt="Tiffin Dada Logo" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
     <span>Tiffin Dada</span>
   </div>
   <div class="nav-links" id="navLinks">
     <a href="#menu">Menu</a>
     <a href="#plans">Plans</a>
     <a href="#why">Why Us</a>
+    <a href="hygiene.html">Hygiene</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="#plans" class="nav-cta">Get Started</a>
@@ -475,7 +540,7 @@
     <h1>Ghar jaisa khana,<br><span class="accent">har roj.</span></h1>
     <p class="sub">Home-cooked lunch for office-goers who miss real, home-style food during busy workdays — made fresh daily, delivered hot, at a price that makes sense.</p>
     <div class="hero-ctas">
-      <a href="#plans" class="btn-primary">🍱 Book your tiffin now</a>
+      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="btn-primary" target="_blank" rel="noopener noreferrer"><img src="tiffin-icon.png" alt="" style="width:22px; height:22px; object-fit:contain;">Book your tiffin now</a>
       <a href="#plans" class="btn-secondary">See Subscription Plans</a>
     </div>
     <div class="hero-badges">
@@ -819,6 +884,86 @@
   <p class="plans-footnote reveal">All plans: home-cooked, less oil, no delivery charges. WhatsApp groups are created per plan — the day's menu is shared the previous night.</p>
 </section>
 
+<!-- PLANS EXPLAINER -->
+<section class="explainer-section">
+  <div class="section-head reveal">
+    <span class="eyebrow-tag">How It Works</span>
+    <h2>From choosing a plan to eating lunch</h2>
+    <p>Not sure how the subscription actually plays out day to day? Here's the whole journey, start to finish.</p>
+  </div>
+
+  <!-- 3 STEP FLOW -->
+  <div class="explainer-steps reveal">
+    <div class="explainer-step">
+      <div class="step-num">1</div>
+      <div class="step-icon">🌿🍗</div>
+      <h4>Pick veg, non-veg, or both</h4>
+      <p>Go all veg, all non-veg, or the Standard plan where you choose any 2 days a week to be veg.</p>
+    </div>
+    <div class="explainer-step">
+      <div class="step-num">2</div>
+      <div class="step-icon">📅</div>
+      <h4>Pick weekly or monthly</h4>
+      <p>Weekly locks in 6 days at a time. Monthly covers 22–26 days and works out cheaper per meal.</p>
+    </div>
+    <div class="explainer-step">
+      <div class="step-num">3</div>
+      <div class="step-icon">🍱</div>
+      <h4>We cook, deliver, repeat</h4>
+      <p>Your thali is cooked fresh and delivered hot to your desk — no app, no ordering, every single day.</p>
+    </div>
+  </div>
+
+  <!-- DAY IN THE LIFE VISUAL -->
+  <div class="day-visual reveal">
+    <div class="day-visual-head">
+      <h3>What a subscription day actually looks like</h3>
+      <p>Once you're on a plan, this is all you have to do:</p>
+    </div>
+    <div class="day-track">
+      <div class="day-stop">
+        <div class="stop-circle">📲</div>
+        <div class="stop-time">Night before</div>
+        <div class="stop-label">Menu shared on WhatsApp</div>
+      </div>
+      <div class="day-connector"></div>
+      <div class="day-stop">
+        <div class="stop-circle">🍳</div>
+        <div class="stop-time">Early morning</div>
+        <div class="stop-label">Freshly cooked in a home kitchen</div>
+      </div>
+      <div class="day-connector"></div>
+      <div class="day-stop">
+        <div class="stop-circle">🛵</div>
+        <div class="stop-time">Before lunchtime</div>
+        <div class="stop-label">Delivered hot to your desk</div>
+      </div>
+      <div class="day-connector"></div>
+      <div class="day-stop">
+        <div class="stop-circle">😋</div>
+        <div class="stop-time">Lunchtime</div>
+        <div class="stop-label">You eat, we handle the rest</div>
+      </div>
+    </div>
+
+    <!-- QUICK COMPARE -->
+    <div class="plan-compare-strip">
+      <div class="compare-col">
+        <div class="compare-label">Weekly Plan</div>
+        <div class="compare-value">₹128–150/day</div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-label">Monthly Plan</div>
+        <div class="compare-value">₹100–131/day</div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-label">Every Plan Includes</div>
+        <div class="compare-value" style="font-size:0.95rem;">No delivery or processing fees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="why-section" id="why">
   <div class="section-head reveal">
@@ -826,11 +971,11 @@
     <h2>Home cooking, minus the compromise</h2>
   </div>
   <div class="why-grid">
-    <div class="why-card reveal">
+    <a href="hygiene.html" class="why-card reveal" style="display:block; cursor:pointer;">
       <div class="why-icon">🧼</div>
       <h3>Hygienic kitchens</h3>
-      <p>Cooked in clean, home kitchens with good-quality ingredients — not a mass canteen.</p>
-    </div>
+      <p>Cooked in clean, home kitchens with good-quality ingredients — not a mass canteen. See our full process →</p>
+    </a>
     <div class="why-card reveal">
       <div class="why-icon">🫒</div>
       <h3>Cooked in less oil</h3>
@@ -857,12 +1002,12 @@
     <p>Message us on WhatsApp to pick a plan, or drop a comment on Instagram — we'll set up your delivery right away.</p>
   </div>
   <div class="contact-btns reveal">
-    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-      <img src="WhatsApp.svg.webp" alt="WhatsApp" style="width:24px; height:24px; object-fit:contain;">
+    <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+      <img src="WhatsApp-logo.svg.webp" alt="WhatsApp" style="width:24px; height:24px; object-fit:contain;">
       Book your tiffin
     </a>
-    <a href="https://instagram.com/tiffindada_official" class="btn-outline-white" target="_blank" rel="noopener noreferrer">
-      <img src="images (7).jpeg" alt="Instagram" style="width:24px; height:24px; border-radius:4px; object-fit:cover;">
+    <a href="https://www.instagram.com/tiffindada_official/" class="btn-outline-white" target="_blank" rel="noopener noreferrer">
+      <img src="Instagram-Logo.jpeg" alt="Instagram" style="width:24px; height:24px; border-radius:4px; object-fit:cover;">
       @tiffindada_official
     </a>
   </div>

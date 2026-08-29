@@ -7,428 +7,414 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <title>Our Story — Tiffin Dada</title>
 <style>
-  :root{
-    --cream:#FBF1D8;
-    --turmeric:#E8A93A;
-    --turmeric-deep:#D6871C;
-    --maroon:#8C1F1F;
-    --maroon-deep:#6B1414;
-    --brown:#3A2417;
-    --steel:#B9BEC4;
-    --steel-dark:#8A9099;
-    --leaf:#4C7A3D;
-    --white:#FFFDF8;
-    --shadow: 0 8px 24px rgba(58,36,23,0.15);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Poppins', 'Segoe UI', sans-serif;
-    background:var(--cream);
-    color:var(--brown);
-    overflow-x:hidden;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
-  }
-  h1,h2,h3{font-family:'Baloo 2', sans-serif; font-weight:700; letter-spacing:-0.005em;}
-  .scribble{font-family:'Caveat', cursive; font-weight:700;}
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-
-  .checker-band{
-    height:14px;
-    background-image: repeating-linear-gradient(45deg, var(--maroon) 0, var(--maroon) 10px, var(--white) 10px, var(--white) 20px);
-  }
-
-  /* ===== NAV ===== */
-  nav{
-    position:sticky; top:0; z-index:100;
-    background:var(--cream);
-    border-bottom:3px solid var(--brown);
-    display:flex; align-items:center; justify-content:space-between;
-    padding:10px 6vw;
-  }
-  .nav-logo{display:flex; align-items:center; gap:12px;}
-  .nav-logo .logo-dot{width:44px; height:44px; border-radius:50%; border:2px solid var(--maroon); background:var(--turmeric); display:flex; align-items:center; justify-content:center; font-size:1.3rem;}
-  .nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.4rem; color:var(--maroon); font-weight:700;}
-  .back-link{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--maroon); color:var(--white); padding:10px 22px; border-radius:30px;
-    font-weight:700; font-size:0.9rem; box-shadow:var(--shadow); border:2px solid var(--brown);
-    transition:transform .15s;
-  }
-  .back-link:hover{transform:translateY(-2px);}
-
-  section{padding:80px 6vw;}
-
-  /* ===== STORY HERO ===== */
-  .story-hero{
-    text-align:center; max-width:780px; margin:0 auto; padding:70px 6vw 50px;
-    position:relative;
-    background:
-      radial-gradient(circle at 85% 10%, rgba(232,169,58,0.35), transparent 45%),
-      radial-gradient(circle at 10% 90%, rgba(140,31,31,0.12), transparent 40%),
-      var(--cream);
-  }
-  .story-hero .eyebrow-tag{
-    display:inline-block; color:var(--maroon); font-weight:700; letter-spacing:0.06em;
-    text-transform:uppercase; font-size:0.8rem; margin-bottom:14px;
-  }
-  .story-hero h1{
-    font-size:clamp(2.2rem, 5vw, 3.4rem); line-height:1.1; margin-bottom:18px; color:var(--brown);
-  }
-  .story-hero h1 .accent{color:var(--maroon);}
-  .story-hero p{font-size:1.1rem; color:#5a4433; line-height:1.6;}
-
-  /* ===== FOUNDER INTRO CARDS ===== */
-  .founders-wrap{
-    max-width:1000px; margin:0 auto; display:flex; flex-direction:column; gap:34px;
-  }
-  .founder-card{
-    display:flex; align-items:center; gap:30px;
-    background:var(--white); border:3px solid var(--brown); border-radius:24px;
-    padding:28px; box-shadow:var(--shadow); position:relative;
-  }
-  .founder-card.reverse{flex-direction:row-reverse;}
-  .founder-photo{
-    flex-shrink:0; width:160px; height:160px; border-radius:50%;
-    border:4px solid var(--turmeric); overflow:hidden;
-    display:flex; align-items:center; justify-content:center;
-    background:repeating-linear-gradient(45deg, var(--cream), var(--cream) 10px, #f2e4bf 10px, #f2e4bf 20px);
-  }
-  .founder-photo img{width:100%; height:100%; object-fit:cover;}
-  .photo-placeholder{
-    text-align:center; color:var(--steel-dark); font-size:0.75rem; font-weight:600; padding:10px;
-  }
-  .photo-placeholder .icon{font-size:2rem; display:block; margin-bottom:6px;}
-  .founder-bubble{
-    position:relative; background:var(--cream); border:2px solid var(--brown); border-radius:20px;
-    padding:20px 26px; flex:1;
-  }
-  .founder-card:not(.reverse) .founder-bubble::before{
-    content:''; position:absolute; left:-14px; top:36px;
-    border-width:10px 16px 10px 0; border-style:solid;
-    border-color:transparent var(--brown) transparent transparent;
-  }
-  .founder-card:not(.reverse) .founder-bubble::after{
-    content:''; position:absolute; left:-10px; top:38px;
-    border-width:8px 13px 8px 0; border-style:solid;
-    border-color:transparent var(--cream) transparent transparent;
-  }
-  .founder-card.reverse .founder-bubble::before{
-    content:''; position:absolute; right:-14px; top:36px;
-    border-width:10px 0 10px 16px; border-style:solid;
-    border-color:transparent transparent transparent var(--brown);
-  }
-  .founder-card.reverse .founder-bubble::after{
-    content:''; position:absolute; right:-10px; top:38px;
-    border-width:8px 0 8px 13px; border-style:solid;
-    border-color:transparent transparent transparent var(--cream);
-  }
-  .founder-bubble .hi-line{font-family:'Caveat', cursive; font-weight:700; font-size:1.8rem; color:var(--maroon); margin-bottom:4px;}
-  .founder-bubble .role{font-size:0.85rem; font-weight:700; color:var(--turmeric-deep); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;}
-  .founder-bubble p{font-size:0.98rem; color:#5a4433; line-height:1.6;}
-
-  @media(max-width:700px){
-    .founder-card, .founder-card.reverse{flex-direction:column; text-align:center;}
-    .founder-card:not(.reverse) .founder-bubble::before,
-    .founder-card:not(.reverse) .founder-bubble::after,
-    .founder-card.reverse .founder-bubble::before,
-    .founder-card.reverse .founder-bubble::after{display:none;}
-  }
-
-  /* ===== STORY CHAPTERS ===== */
-  .chapter{
-    max-width:900px; margin:0 auto 70px;
-  }
-  .chapter-tag{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--maroon); color:var(--white); padding:6px 18px; border-radius:20px;
-    font-weight:700; font-size:0.8rem; margin-bottom:18px;
-  }
-  .chapter h2{font-size:clamp(1.6rem,3.4vw,2.2rem); margin-bottom:20px; color:var(--brown);}
-  .chapter-body{
-    display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center;
-  }
-  .chapter-body.text-right{grid-template-columns:1fr 1fr;}
-  .chapter-body.text-right .chapter-illustration{order:2;}
-  .chapter-text p{font-size:1.02rem; color:#5a4433; line-height:1.75; margin-bottom:14px;}
-  .chapter-text p.quote{
-    font-family:'Caveat', cursive; font-weight:700; font-size:1.5rem; color:var(--maroon);
-    border-left:4px solid var(--turmeric); padding-left:16px; margin:18px 0;
-  }
-  .chapter-illustration{
-    aspect-ratio:4/3; border-radius:20px; border:3px solid var(--brown);
-    background: linear-gradient(135deg, var(--turmeric) 0%, var(--turmeric-deep) 100%);
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; color:var(--white); padding:20px; gap:10px;
-    box-shadow:var(--shadow); overflow:hidden;
-  }
-  .chapter-illustration .icon{font-size:3.2rem; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));}
-  .chapter-illustration .label{font-size:0.85rem; font-weight:700; max-width:80%;}
-  .chapter-illustration.chapter-photo{
-    background:var(--white); padding:0;
-  }
-  .chapter-illustration.chapter-photo img{
-    width:100%; height:100%; object-fit:cover;
-  }
-  @media(max-width:800px){
-    .chapter-body, .chapter-body.text-right{grid-template-columns:1fr;}
-    .chapter-body.text-right .chapter-illustration{order:0;}
-  }
-
-  /* ===== STICKY NOTE STRUGGLE LIST ===== */
-  .struggle-notes{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px;
-    max-width:900px; margin:30px auto 0;
-  }
-  .note{
-    background:var(--turmeric); border:2px solid var(--brown); border-radius:6px;
-    padding:18px; font-family:'Caveat', cursive; font-weight:700; font-size:1.25rem; color:var(--brown);
-    box-shadow:4px 4px 0 rgba(58,36,23,0.25);
-    transform:rotate(-2deg);
-  }
-  .note:nth-child(2){transform:rotate(1.5deg); background:var(--steel);}
-  .note:nth-child(3){transform:rotate(-1deg); background:var(--white);}
-  .note:nth-child(4){transform:rotate(2deg); background:var(--turmeric);}
-
-  /* ===== AHA MOMENT ===== */
-  /* ===== KITCHEN GALLERY ===== */
-  .kitchen-gallery{
-    max-width:1000px; margin:0 auto; text-align:center;
-  }
-  .kitchen-gallery .section-head{max-width:650px; margin:0 auto 40px;}
-  .kitchen-gallery .eyebrow-tag{color:var(--maroon);}
-  .kitchen-gallery h2{font-size:clamp(1.8rem,3.6vw,2.4rem); color:var(--brown); margin-bottom:14px;}
-  .kitchen-gallery .sub{color:#5a4433; font-size:1.02rem; line-height:1.65;}
-  .gallery-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:28px;
-  }
-  .gallery-photo{
-    border-radius:20px; border:3px solid var(--brown); overflow:hidden;
-    box-shadow:var(--shadow); aspect-ratio:4/3;
-  }
-  .gallery-photo img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
-  .gallery-photo:hover img{transform:scale(1.05);}
-  @media(max-width:700px){
-    .gallery-grid{grid-template-columns:1fr;}
-  }
-
-  .aha-section{
-    background:var(--maroon); color:var(--white); text-align:center; border-top:3px solid var(--brown); border-bottom:3px solid var(--brown);
-  }
-  .aha-section .eyebrow-tag{color:var(--turmeric); display:block; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; font-size:0.8rem; margin-bottom:14px;}
-  .aha-section h2{font-size:clamp(1.8rem,3.6vw,2.6rem); max-width:700px; margin:0 auto 20px;}
-  .aha-section p{max-width:650px; margin:0 auto; font-size:1.05rem; line-height:1.7; color:#f0d8d8;}
-  .aha-section .big-line{
-    font-family:'Caveat', cursive; font-weight:700; font-size:2.2rem; color:var(--turmeric); margin-top:24px;
-  }
-
-  /* ===== TRUST BADGES ===== */
-  .trust-section{background:var(--white); text-align:center;}
-  .trust-section h2{margin-bottom:10px;}
-  .trust-section .sub{color:#5a4433; margin-bottom:36px;}
-  .trust-badges{
-    display:flex; gap:18px; flex-wrap:wrap; justify-content:center; max-width:800px; margin:0 auto;
-  }
-  .trust-badge{
-    display:flex; align-items:center; gap:10px;
-    background:var(--cream); border:2px solid var(--brown); border-radius:30px;
-    padding:14px 24px; font-weight:700; font-size:0.95rem; color:var(--brown);
-  }
-  .trust-badge .icon{font-size:1.3rem;}
-
-  /* ===== CTA ===== */
-  .story-cta{
-    background:var(--cream); text-align:center;
-  }
-  .story-cta h2{margin-bottom:14px;}
-  .story-cta p{color:#5a4433; margin-bottom:30px; max-width:500px; margin-left:auto; margin-right:auto;}
-  .cta-btns{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
-  .btn-primary{
-    background:var(--maroon); color:var(--white); padding:16px 32px; border-radius:40px;
-    font-weight:700; font-size:1.05rem; box-shadow:var(--shadow); border:2px solid var(--brown);
-    display:inline-flex; align-items:center; gap:10px; transition:transform .15s;
-  }
-  .btn-primary:hover{transform:translateY(-3px);}
-  .btn-secondary{
-    background:transparent; color:var(--brown); padding:16px 30px; border-radius:40px;
-    font-weight:700; font-size:1.05rem; border:2px solid var(--brown); transition:background .15s;
-  }
-  .btn-secondary:hover{background:var(--white);}
-
-  footer{
-    background:var(--brown); color:var(--cream); padding:40px 6vw 26px; text-align:center;
-  }
-  footer .foot-logo{font-family:'Baloo 2', sans-serif; font-size:1.5rem; color:var(--turmeric); margin-bottom:8px; font-weight:700;}
-  footer p{font-size:0.85rem; opacity:0.75;}
-
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.visible{opacity:1; transform:translateY(0);}
+:root{
+--cream:#FBF1D8;
+--turmeric:#E8A93A;
+--turmeric-deep:#D6871C;
+--maroon:#8C1F1F;
+--maroon-deep:#6B1414;
+--brown:#3A2417;
+--steel:#B9BEC4;
+--steel-dark:#8A9099;
+--leaf:#4C7A3D;
+--white:#FFFDF8;
+--shadow: 0 8px 24px rgba(58,36,23,0.15);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+font-family:'Poppins', 'Segoe UI', sans-serif;
+background:var(--cream);
+color:var(--brown);
+overflow-x:hidden;
+}
+@media (prefers-reduced-motion: reduce){
+*{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+}
+h1,h2,h3{font-family:'Baloo 2', sans-serif; font-weight:700; letter-spacing:-0.005em;}
+.scribble{font-family:'Caveat', cursive; font-weight:700;}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+.checker-band{
+height:14px;
+background-image: repeating-linear-gradient(45deg, var(--maroon) 0, var(--maroon) 10px, var(--white) 10px, var(--white) 20px);
+}
+/* ===== NAV ===== */
+nav{
+position:sticky; top:0; z-index:100;
+background:var(--cream);
+border-bottom:3px solid var(--brown);
+display:flex; align-items:center; justify-content:space-between;
+padding:10px 6vw;
+}
+.nav-logo{display:flex; align-items:center; gap:12px;}
+.nav-logo img{width:48px; height:48px; border-radius:50%; object-fit:cover;}
+.nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.4rem; color:var(--maroon); font-weight:700;}
+.back-link{
+display:inline-flex; align-items:center; gap:8px;
+background:var(--maroon); color:var(--white); padding:10px 22px; border-radius:30px;
+font-weight:700; font-size:0.9rem; box-shadow:var(--shadow); border:2px solid var(--brown);
+transition:transform .15s;
+}
+.back-link:hover{transform:translateY(-2px);}
+section{padding:80px 6vw;}
+/* ===== STORY HERO ===== */
+.story-hero{
+text-align:center; max-width:780px; margin:0 auto; padding:70px 6vw 50px;
+position:relative;
+background:
+radial-gradient(circle at 85% 10%, rgba(232,169,58,0.35), transparent 45%),
+radial-gradient(circle at 10% 90%, rgba(140,31,31,0.12), transparent 40%),
+var(--cream);
+}
+.story-hero .eyebrow-tag{
+display:inline-block; color:var(--maroon); font-weight:700; letter-spacing:0.06em;
+text-transform:uppercase; font-size:0.8rem; margin-bottom:14px;
+}
+.story-hero h1{
+font-size:clamp(2.2rem, 5vw, 3.4rem); line-height:1.1; margin-bottom:18px; color:var(--brown);
+}
+.story-hero h1 .accent{color:var(--maroon);}
+.story-hero p{font-size:1.1rem; color:#5a4433; line-height:1.6;}
+/* ===== FOUNDER INTRO CARDS ===== */
+.founders-wrap{
+max-width:1000px; margin:0 auto; display:flex; flex-direction:column; gap:34px;
+}
+.founder-card{
+display:flex; align-items:center; gap:30px;
+background:var(--white); border:3px solid var(--brown); border-radius:24px;
+padding:28px; box-shadow:var(--shadow); position:relative;
+}
+.founder-card.reverse{flex-direction:row-reverse;}
+.founder-photo{
+flex-shrink:0; width:160px; height:160px; border-radius:50%;
+border:4px solid var(--turmeric); overflow:hidden;
+display:flex; align-items:center; justify-content:center;
+background:repeating-linear-gradient(45deg, var(--cream), var(--cream) 10px, #f2e4bf 10px, #f2e4bf 20px);
+}
+.founder-photo img{width:100%; height:100%; object-fit:cover;}
+.photo-placeholder{
+text-align:center; color:var(--steel-dark); font-size:0.75rem; font-weight:600; padding:10px;
+}
+.photo-placeholder .icon{font-size:2rem; display:block; margin-bottom:6px;}
+.founder-bubble{
+position:relative; background:var(--cream); border:2px solid var(--brown); border-radius:20px;
+padding:20px 26px; flex:1;
+}
+.founder-card:not(.reverse) .founder-bubble::before{
+content:''; position:absolute; left:-14px; top:36px;
+border-width:10px 16px 10px 0; border-style:solid;
+border-color:transparent var(--brown) transparent transparent;
+}
+.founder-card:not(.reverse) .founder-bubble::after{
+content:''; position:absolute; left:-10px; top:38px;
+border-width:8px 13px 8px 0; border-style:solid;
+border-color:transparent var(--cream) transparent transparent;
+}
+.founder-card.reverse .founder-bubble::before{
+content:''; position:absolute; right:-14px; top:36px;
+border-width:10px 0 10px 16px; border-style:solid;
+border-color:transparent transparent transparent var(--brown);
+}
+.founder-card.reverse .founder-bubble::after{
+content:''; position:absolute; right:-10px; top:38px;
+border-width:8px 0 8px 13px; border-style:solid;
+border-color:transparent transparent transparent var(--cream);
+}
+.founder-bubble .hi-line{font-family:'Caveat', cursive; font-weight:700; font-size:1.8rem; color:var(--maroon); margin-bottom:4px;}
+.founder-bubble .role{font-size:0.85rem; font-weight:700; color:var(--turmeric-deep); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;}
+.founder-bubble p{font-size:0.98rem; color:#5a4433; line-height:1.6;}
+@media(max-width:700px){
+.founder-card, .founder-card.reverse{flex-direction:column; text-align:center;}
+.founder-card:not(.reverse) .founder-bubble::before,
+.founder-card:not(.reverse) .founder-bubble::after,
+.founder-card.reverse .founder-bubble::before,
+.founder-card.reverse .founder-bubble::after{display:none;}
+}
+/* ===== STORY CHAPTERS ===== */
+.chapter{
+max-width:900px; margin:0 auto 70px;
+}
+.chapter-tag{
+display:inline-flex; align-items:center; gap:8px;
+background:var(--maroon); color:var(--white); padding:6px 18px; border-radius:20px;
+font-weight:700; font-size:0.8rem; margin-bottom:18px;
+}
+.chapter h2{font-size:clamp(1.6rem,3.4vw,2.2rem); margin-bottom:20px; color:var(--brown);}
+.chapter-body{
+display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center;
+}
+.chapter-body.text-right{grid-template-columns:1fr 1fr;}
+.chapter-body.text-right .chapter-illustration{order:2;}
+.chapter-text p{font-size:1.02rem; color:#5a4433; line-height:1.75; margin-bottom:14px;}
+.chapter-text p.quote{
+font-family:'Caveat', cursive; font-weight:700; font-size:1.5rem; color:var(--maroon);
+border-left:4px solid var(--turmeric); padding-left:16px; margin:18px 0;
+}
+.chapter-illustration{
+aspect-ratio:4/3; border-radius:20px; border:3px solid var(--brown);
+background: linear-gradient(135deg, var(--turmeric) 0%, var(--turmeric-deep) 100%);
+display:flex; flex-direction:column; align-items:center; justify-content:center;
+text-align:center; color:var(--white); padding:20px; gap:10px;
+box-shadow:var(--shadow); overflow:hidden;
+}
+.chapter-illustration .icon{font-size:3.2rem; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));}
+.chapter-illustration .label{font-size:0.85rem; font-weight:700; max-width:80%;}
+.chapter-illustration.chapter-photo{
+background:var(--white); padding:0;
+}
+.chapter-illustration.chapter-photo img{
+width:100%; height:100%; object-fit:cover;
+}
+@media(max-width:800px){
+.chapter-body, .chapter-body.text-right{grid-template-columns:1fr;}
+.chapter-body.text-right .chapter-illustration{order:0;}
+}
+/* ===== STICKY NOTE STRUGGLE LIST ===== */
+.struggle-notes{
+display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px;
+max-width:900px; margin:30px auto 0;
+}
+.note{
+background:var(--turmeric); border:2px solid var(--brown); border-radius:6px;
+padding:18px; font-family:'Caveat', cursive; font-weight:700; font-size:1.25rem; color:var(--brown);
+box-shadow:4px 4px 0 rgba(58,36,23,0.25);
+transform:rotate(-2deg);
+}
+.note:nth-child(2){transform:rotate(1.5deg); background:var(--steel);}
+.note:nth-child(3){transform:rotate(-1deg); background:var(--white);}
+.note:nth-child(4){transform:rotate(2deg); background:var(--turmeric);}
+/* ===== AHA MOMENT ===== */
+/* ===== KITCHEN GALLERY ===== */
+.kitchen-gallery{
+max-width:1000px; margin:0 auto; text-align:center;
+}
+.kitchen-gallery .section-head{max-width:650px; margin:0 auto 40px;}
+.kitchen-gallery .eyebrow-tag{color:var(--maroon);}
+.kitchen-gallery h2{font-size:clamp(1.8rem,3.6vw,2.4rem); color:var(--brown); margin-bottom:14px;}
+.kitchen-gallery .sub{color:#5a4433; font-size:1.02rem; line-height:1.65;}
+.gallery-grid{
+display:grid; grid-template-columns:1fr 1fr; gap:28px;
+}
+.gallery-photo{
+border-radius:20px; border:3px solid var(--brown); overflow:hidden;
+box-shadow:var(--shadow); aspect-ratio:4/3;
+}
+.gallery-photo img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
+.gallery-photo:hover img{transform:scale(1.05);}
+@media(max-width:700px){
+.gallery-grid{grid-template-columns:1fr;}
+}
+.aha-section{
+background:var(--maroon); color:var(--white); text-align:center; border-top:3px solid var(--brown); border-bottom:3px solid var(--brown);
+}
+.aha-section .eyebrow-tag{color:var(--turmeric); display:block; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; font-size:0.8rem; margin-bottom:14px;}
+.aha-section h2{font-size:clamp(1.8rem,3.6vw,2.6rem); max-width:700px; margin:0 auto 20px;}
+.aha-section p{max-width:650px; margin:0 auto; font-size:1.05rem; line-height:1.7; color:#f0d8d8;}
+.aha-section .big-line{
+font-family:'Caveat', cursive; font-weight:700; font-size:2.2rem; color:var(--turmeric); margin-top:24px;
+}
+/* ===== TRUST BADGES ===== */
+.trust-section{background:var(--white); text-align:center;}
+.trust-section h2{margin-bottom:10px;}
+.trust-section .sub{color:#5a4433; margin-bottom:36px;}
+.trust-badges{
+display:flex; gap:18px; flex-wrap:wrap; justify-content:center; max-width:800px; margin:0 auto;
+}
+.trust-badge{
+display:flex; align-items:center; gap:10px;
+background:var(--cream); border:2px solid var(--brown); border-radius:30px;
+padding:14px 24px; font-weight:700; font-size:0.95rem; color:var(--brown);
+}
+.trust-badge .icon{font-size:1.3rem;}
+/* ===== CTA ===== */
+.story-cta{
+background:var(--cream); text-align:center;
+}
+.story-cta h2{margin-bottom:14px;}
+.story-cta p{color:#5a4433; margin-bottom:30px; max-width:500px; margin-left:auto; margin-right:auto;}
+.cta-btns{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
+.btn-primary{
+background:var(--maroon); color:var(--white); padding:16px 32px; border-radius:40px;
+font-weight:700; font-size:1.05rem; box-shadow:var(--shadow); border:2px solid var(--brown);
+display:inline-flex; align-items:center; gap:10px; transition:transform .15s;
+}
+.btn-primary:hover{transform:translateY(-3px);}
+.btn-secondary{
+background:transparent; color:var(--brown); padding:16px 30px; border-radius:40px;
+font-weight:700; font-size:1.05rem; border:2px solid var(--brown); transition:background .15s;
+}
+.btn-secondary:hover{background:var(--white);}
+footer{
+background:var(--brown); color:var(--cream); padding:40px 6vw 26px; text-align:center;
+}
+footer .foot-logo{font-family:'Baloo 2', sans-serif; font-size:1.5rem; color:var(--turmeric); margin-bottom:8px; font-weight:700;}
+footer p{font-size:0.85rem; opacity:0.75;}
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.visible{opacity:1; transform:translateY(0);}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">
-    <div class="logo-dot">🍱</div>
-    <span>Tiffin Dada</span>
-  </div>
-  <a href="index.html" class="back-link">← Back to Home</a>
+<div class="nav-logo">
+<img src="tiffin-dada-logo.png" alt="Tiffin Dada Logo">
+<span>Tiffin Dada</span>
+</div>
+<a href="index.html" class="back-link">← Back to Home</a>
 </nav>
 
 <!-- STORY HERO -->
 <div class="story-hero">
-  <span class="eyebrow-tag">Our Story</span>
-  <h1>So... why does <span class="accent">Tiffin Dada</span> even exist? 🤔</h1>
-  <p>Grab a cup of chai ☕ — this one's a bit personal. It's the story of two tired corporate employees, a LOT of missed lunches, and one very stubborn question.</p>
+<span class="eyebrow-tag">Our Story</span>
+<h1>So... why does <span class="accent">Tiffin Dada</span> even exist? 🤔</h1>
+<p>Grab a cup of chai ☕ — this one's a bit personal. It's the story of two tired corporate employees, a LOT of missed lunches, and one very stubborn question.</p>
 </div>
 
 <!-- FOUNDER INTROS -->
 <section>
-  <div class="founders-wrap">
-    <div class="founder-card reveal">
-      <div class="founder-photo">
-        <img src="founder-deep.jpg" alt="Deep, Co-Founder of Tiffin Dada">
-      </div>
-      <div class="founder-bubble">
-        <div class="hi-line">Hi, I'm Deep! 👋</div>
-        <div class="role">Co-Founder, Tiffin Dada</div>
-        <p>For the last 2-3 years I've been grinding away in a corporate job — the kind where you leave home before the sun's fully up and get back when you're too tired to even think about food. Cooking dinner? Fine, somehow I'd manage. But tomorrow's lunch? That's where things always fell apart.</p>
-      </div>
-    </div>
+<div class="founders-wrap">
+<div class="founder-card reveal">
+<div class="founder-photo">
+<img src="founder-deep.jpg" alt="Deep, Co-Founder of Tiffin Dada">
+</div>
+<div class="founder-bubble">
+<div class="hi-line">Hi, I'm Deep! 👋</div>
+<div class="role">Co-Founder, Tiffin Dada</div>
+<p>For the last 2-3 years I've been grinding away in a corporate job — the kind where you leave home before the sun's fully up and get back when you're too tired to even think about food. Cooking dinner? Fine, somehow I'd manage. But tomorrow's lunch? That's where things always fell apart.</p>
+</div>
+</div>
 
-    <div class="founder-card reverse reveal">
-      <div class="founder-photo">
-        <img src="founder-shreya.jpg" alt="Shreya, Co-Founder of Tiffin Dada">
-      </div>
-      <div class="founder-bubble">
-        <div class="hi-line">Hi, I'm Shreya! 👋</div>
-        <div class="role">Co-Founder, Tiffin Dada</div>
-        <p>Same story, different desk. I'd survive on cold sandwiches, sketchy stall food, or just... skip lunch and regret it by 4pm. Deep and I used to complain about this exact thing almost every single day. Turns out, complaining enough times eventually turns into an idea. 😅</p>
-      </div>
-    </div>
-  </div>
+<div class="founder-card reverse reveal">
+<div class="founder-photo">
+<img src="founder-shreya.jpg" alt="Shreya, Co-Founder of Tiffin Dada">
+</div>
+<div class="founder-bubble">
+<div class="hi-line">Hi, I'm Shreya! 👋</div>
+<div class="role">Co-Founder, Tiffin Dada</div>
+<p>Same story, different desk. I'd survive on cold sandwiches, sketchy stall food, or just... skip lunch and regret it by 4pm. Deep and I used to complain about this exact thing almost every single day. Turns out, complaining enough times eventually turns into an idea. 😅</p>
+</div>
+</div>
+</div>
 </section>
 
 <div class="checker-band"></div>
 
 <!-- CHAPTER 1: THE PROBLEM -->
 <section>
-  <div class="chapter reveal">
-    <span class="chapter-tag">Chapter 1</span>
-    <h2>The 9-to-9 lunch problem 🕘</h2>
-    <div class="chapter-body">
-      <div class="chapter-text">
-        <p>Okay real talk — if you work in a corporate job, you already know this feeling. You're away from home, the days are long, and by the time you're back, dinner is *just* manageable. But lunch for the next day? That's a whole different fight.</p>
-        <p class="quote">"I'll wake up early and cook tomorrow" — a lie we told ourselves almost every night.</p>
-        <p>Some days it was skipped meals. Some days it was the fourth cup of coffee pretending to be lunch. We weren't the only ones — turns out almost everyone on our floor had the exact same struggle.</p>
-      </div>
-      <div class="chapter-illustration">
-        <span class="icon">🧑‍💻🍜</span>
-        <span class="label">Every desk, every evening — same empty tiffin box</span>
-      </div>
-    </div>
-  </div>
+<div class="chapter reveal">
+<span class="chapter-tag">Chapter 1</span>
+<h2>The 9-to-9 lunch problem 🕘</h2>
+<div class="chapter-body">
+<div class="chapter-text">
+<p>Okay real talk — if you work in a corporate job, you already know this feeling. You're away from home, the days are long, and by the time you're back, dinner is *just* manageable. But lunch for the next day? That's a whole different fight.</p>
+<p class="quote">"I'll wake up early and cook tomorrow" — a lie we told ourselves almost every night.</p>
+<p>Some days it was skipped meals. Some days it was the fourth cup of coffee pretending to be lunch. We weren't the only ones — turns out almost everyone on our floor had the exact same struggle.</p>
+</div>
+<div class="chapter-illustration">
+<span class="icon">🧑‍💻🍜</span>
+<span class="label">Every desk, every evening — same empty tiffin box</span>
+</div>
+</div>
+</div>
 
-  <!-- CHAPTER 2: THE OPTIONS -->
-  <div class="chapter reveal">
-    <span class="chapter-tag">Chapter 2</span>
-    <h2>We tried everything. Literally. 🍽️</h2>
-    <div class="chapter-body text-right">
-      <div class="chapter-illustration">
-        <span class="icon">💸🛵🍛</span>
-        <span class="label">Pricey delivery apps vs. questionable roadside stalls</span>
-      </div>
-      <div class="chapter-text">
-        <p>So we did what everyone does — we tried to fix it. Food delivery apps? Great food, but ordering lunch every single working day adds up scary fast. Our wallets were not happy.</p>
-        <p>Local food stalls? Cheaper, sure. But hygiene was a gamble, portions were inconsistent, and half the time we weren't even sure what was in it. Not exactly "healthy home lunch" material.</p>
-        <div class="struggle-notes">
-          <div class="note">Too pricey 😬</div>
-          <div class="note">Hygiene? Unsure 🤷</div>
-          <div class="note">Same boring menu</div>
-          <div class="note">No time to cook</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- CHAPTER 2: THE OPTIONS -->
+<div class="chapter reveal">
+<span class="chapter-tag">Chapter 2</span>
+<h2>We tried everything. Literally. 🍽️</h2>
+<div class="chapter-body text-right">
+<div class="chapter-illustration">
+<span class="icon">💸🛵🍛</span>
+<span class="label">Pricey delivery apps vs. questionable roadside stalls</span>
+</div>
+<div class="chapter-text">
+<p>So we did what everyone does — we tried to fix it. Food delivery apps? Great food, but ordering lunch every single working day adds up scary fast. Our wallets were not happy.</p>
+<p>Local food stalls? Cheaper, sure. But hygiene was a gamble, portions were inconsistent, and half the time we weren't even sure what was in it. Not exactly "healthy home lunch" material.</p>
+<div class="struggle-notes">
+<div class="note">Too pricey 😬</div>
+<div class="note">Hygiene? Unsure 🤷</div>
+<div class="note">Same boring menu</div>
+<div class="note">No time to cook</div>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- CHAPTER 3: THE AHA -->
-  <div class="chapter reveal" style="margin-bottom:0;">
-    <span class="chapter-tag">Chapter 3</span>
-    <h2>Then it hit us 💡</h2>
-    <div class="chapter-body">
-      <div class="chapter-text">
-        <p>One evening, over yet another sad desk-lunch conversation, we asked a very simple question:</p>
-        <p class="quote">"Why should anyone have to choose between good food and affordable food?"</p>
-        <p>That's it. That's the whole spark. We didn't want to build "just another food delivery app." We wanted something that actually felt like someone's mom packed your tiffin that morning — fresh, home-style, and priced like a friend would price it, not a business trying to squeeze every rupee out of you.</p>
-      </div>
-      <div class="chapter-illustration chapter-photo">
-        <img src="team-photo.jpg" alt="Deep and Shreya in the Tiffin Dada kitchen">
-      </div>
-    </div>
-  </div>
+<!-- CHAPTER 3: THE AHA -->
+<div class="chapter reveal" style="margin-bottom:0;">
+<span class="chapter-tag">Chapter 3</span>
+<h2>Then it hit us 💡</h2>
+<div class="chapter-body">
+<div class="chapter-text">
+<p>One evening, over yet another sad desk-lunch conversation, we asked a very simple question:</p>
+<p class="quote">"Why should anyone have to choose between good food and affordable food?"</p>
+<p>That's it. That's the whole spark. We didn't want to build "just another food delivery app." We wanted something that actually felt like someone's mom packed your tiffin that morning — fresh, home-style, and priced like a friend would price it, not a business trying to squeeze every rupee out of you.</p>
+</div>
+<div class="chapter-illustration chapter-photo">
+<img src="team-photo.jpg" alt="Deep and Shreya in the Tiffin Dada kitchen">
+</div>
+</div>
+</div>
 </section>
 
 <!-- KITCHEN GALLERY -->
 <section class="kitchen-gallery reveal">
-  <div class="section-head">
-    <span class="eyebrow-tag">No fancy commercial setup</span>
-    <h2>Just a real home kitchen 🏠</h2>
-    <p class="sub">This is where every tiffin actually gets made — no cloud kitchen, no factory line. Just a clean home kitchen, real spices, and a lot of care.</p>
-  </div>
-  <div class="gallery-grid">
-    <div class="gallery-photo"><img src="kitchen-1.jpg" alt="Tiffin Dada home kitchen setup"></div>
-    <div class="gallery-photo"><img src="kitchen-2.jpg" alt="Tiffin Dada kitchen counter and spice shelf"></div>
-  </div>
+<div class="section-head">
+<span class="eyebrow-tag">No fancy commercial setup</span>
+<h2>Just a real home kitchen 🏠</h2>
+<p class="sub">This is where every tiffin actually gets made — no cloud kitchen, no factory line. Just a clean home kitchen, real spices, and a lot of care.</p>
+</div>
+<div class="gallery-grid">
+<div class="gallery-photo"><img src="kitchen-1.jpg" alt="Tiffin Dada home kitchen setup"></div>
+<div class="gallery-photo"><img src="kitchen-2.jpg" alt="Tiffin Dada kitchen counter and spice shelf"></div>
+</div>
 </section>
 
 <!-- AHA / MISSION -->
 <section class="aha-section reveal">
-  <span class="eyebrow-tag">And that's how Tiffin Dada happened</span>
-  <h2>Fresh, home-style meals. Honest prices. No drama.</h2>
-  <p>Every tiffin is cooked in a real home kitchen, with the same care you'd expect from your own kitchen — and delivered straight to you, still feeling like home.</p>
-  <div class="big-line">Because lunch shouldn't be this hard. 🍱❤️</div>
+<span class="eyebrow-tag">And that's how Tiffin Dada happened</span>
+<h2>Fresh, home-style meals. Honest prices. No drama.</h2>
+<p>Every tiffin is cooked in a real home kitchen, with the same care you'd expect from your own kitchen — and delivered straight to you, still feeling like home.</p>
+<div class="big-line">Because lunch shouldn't be this hard. 🍱❤️</div>
 </section>
 
 <!-- TRUST BADGES -->
 <section class="trust-section reveal">
-  <h2>Oh, and one more thing...</h2>
-  <p class="sub">We're big on "no surprises." What you see is exactly what you pay.</p>
-  <div class="trust-badges">
-    <div class="trust-badge"><span class="icon">📦</span>No Packaging Charges</div>
-    <div class="trust-badge"><span class="icon">🛵</span>No Delivery Fees</div>
-    <div class="trust-badge"><span class="icon">🔍</span>No Hidden Costs</div>
-  </div>
+<h2>Oh, and one more thing...</h2>
+<p class="sub">We're big on "no surprises." What you see is exactly what you pay.</p>
+<div class="trust-badges">
+<div class="trust-badge"><span class="icon">📦</span>No Packaging Charges</div>
+<div class="trust-badge"><span class="icon">🛵</span>No Delivery Fees</div>
+<div class="trust-badge"><span class="icon">🔍</span>No Hidden Costs</div>
+</div>
 </section>
 
 <!-- CTA -->
 <section class="story-cta reveal">
-  <h2>Ready to give your lunch a glow-up? 🍛</h2>
-  <p>Come see the menu, plans, and everything else on the main site.</p>
-  <div class="cta-btns">
-    <a href="index.html#plans" class="btn-primary">See Plans & Pricing →</a>
-    <a href="index.html" class="btn-secondary">Back to Home</a>
-  </div>
+<h2>Ready to give your lunch a glow-up? 🍛</h2>
+<p>Come see the menu, plans, and everything else on the main site.</p>
+<div class="cta-btns">
+<a href="index.html#plans" class="btn-primary">See Plans & Pricing →</a>
+<a href="index.html" class="btn-secondary">Back to Home</a>
+</div>
 </section>
 
 <footer>
-  <div class="foot-logo">Tiffin Dada</div>
-  <p>&copy; 2026 Tiffin Dada. Made with love (and a lot of tiffin boxes) in Kolkata.</p>
+<div class="foot-logo">Tiffin Dada</div>
+<p>&copy; 2026 Tiffin Dada. Made with love (and a lot of tiffin boxes) in Kolkata.</p>
 </footer>
 
 <script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => observer.observe(el));
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+revealEls.forEach(el => observer.observe(el));
 </script>
 
 </body>
