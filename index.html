@@ -246,21 +246,51 @@
   .menu-toggle button.active{background:var(--maroon); color:var(--white);}
   .menu-toggle button:focus-visible{outline:3px solid var(--turmeric-deep); outline-offset:2px; z-index:1; position:relative;}
 
-  .menu-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:26px;
-    max-width:1100px; margin:0 auto;
+  /* ===== THALI ANATOMY STRIP ===== */
+  .thali-strip{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:18px;
+    max-width:1100px; margin:0 auto 60px;
   }
-  .menu-card{
-    background:var(--white); border:2px solid var(--brown); border-radius:16px;
-    padding:26px; position:relative; overflow:hidden;
-    transition:transform .2s, box-shadow .2s;
+  .thali-item{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    width:110px; text-align:center;
   }
-  .menu-card:hover{transform:translateY(-5px); box-shadow:var(--shadow);}
-  .menu-card .icon{font-size:1.8rem; margin-bottom:10px;}
-  .menu-card h3{font-size:1.25rem; color:var(--maroon); margin-bottom:10px;}
-  .menu-card p{font-size:0.92rem; line-height:1.55; color:#5a4433;}
-  .menu-panel{display:none;}
-  .menu-panel.active{display:grid;}
+  .thali-item .circle{
+    width:64px; height:64px; border-radius:50%; background:var(--white);
+    border:2px solid var(--brown); display:flex; align-items:center; justify-content:center;
+    font-size:1.6rem; box-shadow:var(--shadow);
+  }
+  .thali-item span.label{font-size:0.78rem; font-weight:700; color:var(--brown);}
+  .thali-arrow{align-self:center; font-size:1.3rem; color:var(--steel-dark); margin-top:-24px;}
+  @media(max-width:700px){ .thali-arrow{display:none;} }
+
+  /* ===== CHAMPION ITEM CARDS ===== */
+  .champs-head{text-align:center; max-width:600px; margin:60px auto 30px;}
+  .champ-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:24px;
+    max-width:1150px; margin:0 auto;
+  }
+  .champ-card{
+    background:var(--white); border:2px solid var(--brown); border-radius:18px;
+    overflow:hidden; box-shadow:var(--shadow); transition:transform .2s;
+  }
+  .champ-card:hover{transform:translateY(-5px);}
+  .champ-photo{
+    aspect-ratio:4/3; position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--turmeric) 0%, var(--turmeric-deep) 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .champ-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .champ-badge{
+    position:absolute; top:10px; left:10px; background:var(--maroon); color:var(--white);
+    font-size:0.68rem; font-weight:700; padding:4px 10px; border-radius:20px;
+    border:1.5px solid var(--brown); letter-spacing:0.02em;
+  }
+  .champ-body{padding:16px 18px 20px;}
+  .champ-body h4{font-size:1.05rem; color:var(--maroon); margin-bottom:6px;}
+  .champ-body p{font-size:0.85rem; color:#5a4433; line-height:1.5;}
+  .champ-panel{display:none;}
+  .champ-panel.active{display:grid;}
 
   /* ===== NEW PLANS SECTION ===== */
   .plans-section{background:var(--white); border-top:3px solid var(--brown);}
@@ -389,6 +419,8 @@
   .contact-section .eyebrow-tag{color:var(--turmeric);}
   .contact-section h2{color:var(--white);}
   .contact-btns{display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:10px;}
+  
+  /* REVERTED TO ORIGINAL CONTACT BUTTON CSS */
   .btn-whatsapp{
     background:var(--turmeric); color:var(--brown); padding:16px 34px; border-radius:40px;
     font-weight:700; font-size:1.05rem; border:2px solid var(--brown);
@@ -396,9 +428,11 @@
   }
   .btn-whatsapp:hover{transform:translateY(-3px);}
   .btn-whatsapp:focus-visible{outline:3px solid var(--white); outline-offset:3px;}
+  
   .btn-outline-white{
     background:transparent; color:var(--white); padding:16px 34px; border-radius:40px;
     font-weight:700; font-size:1.05rem; border:2px solid var(--white);
+    display:inline-flex; align-items:center; gap:10px; transition:background .15s;
   }
   .btn-outline-white:hover{background:rgba(255,255,255,0.1);}
   .btn-outline-white:focus-visible{outline:3px solid var(--turmeric); outline-offset:3px;}
@@ -437,12 +471,12 @@
 <!-- HERO -->
 <section class="hero">
   <div>
-    <div class="hero-eyebrow">📍 Kolkata • Starting 1st September 2026</div>
+    <div class="hero-eyebrow">📍 Kolkata</div>
     <h1>Ghar jaisa khana,<br><span class="accent">har roj.</span></h1>
     <p class="sub">Home-cooked lunch for office-goers who miss real, home-style food during busy workdays — made fresh daily, delivered hot, at a price that makes sense.</p>
     <div class="hero-ctas">
-      <a href="#plans" class="btn-primary">🍱 See Subscription Plans</a>
-      <a href="#menu" class="btn-secondary">View Today's Menu</a>
+      <a href="#plans" class="btn-primary">🍱 Book your tiffin now</a>
+      <a href="#plans" class="btn-secondary">See Subscription Plans</a>
     </div>
     <div class="hero-badges">
       <div class="hero-badge"><span class="dot"></span> No delivery charges</div>
@@ -471,7 +505,7 @@
       <span class="photo-tag">Deep &amp; Shreya</span>
     </div>
     <div class="story-copy">
-      <span class="eyebrow-tag">Our Roots</span>
+      <span class="eyebrow-tag">Our Story</span>
       <h2>Born from the 9-to-9 grind 🕒</h2>
       <p>
         Tiffin Dada didn't start in a boardroom. It started with two tired corporate employees—Deep and Shreya—staring at empty lunchboxes, sick of choosing between expensive delivery apps and questionable street food. We built the home-cooked solution we desperately needed.
@@ -483,12 +517,30 @@
   </div>
 </section>
 
-<!-- MENU -->
+<!-- MENU / WHAT'S IN YOUR DABBA -->
 <section class="menu-section" id="menu">
   <div class="section-head reveal">
-    <span class="eyebrow-tag">Today's Thali</span>
-    <h2>What's in the tiffin</h2>
-    <p>Every meal is a full home-style thali — rice, dal, sabji, a main course, and something sweet to finish. Menu rotates daily, shared in your WhatsApp group the night before.</p>
+    <span class="eyebrow-tag">What You Actually Get</span>
+    <h2>What's in your dabba</h2>
+    <p>Our menu rotates daily (shared on WhatsApp the night before), but every single dabba follows the same home-style thali structure — here's what that looks like, plus a few crowd favorites you'll see on repeat.</p>
+  </div>
+
+  <!-- THALI ANATOMY -->
+  <div class="thali-strip reveal">
+    <div class="thali-item"><div class="circle">🍚</div><span class="label">Rice / Kichuri</span></div>
+    <div class="thali-item"><div class="circle">🥘</div><span class="label">Dal</span></div>
+    <div class="thali-item"><div class="circle">🥗</div><span class="label">Sabji</span></div>
+    <div class="thali-item"><div class="circle">🍛</div><span class="label">Main Course</span></div>
+    <div class="thali-item"><div class="circle">🥒</div><span class="label">Chatni</span></div>
+    <div class="thali-item"><div class="circle">🍘</div><span class="label">Papad</span></div>
+    <div class="thali-item"><div class="circle">🥬</div><span class="label">Salad</span></div>
+    <div class="thali-item"><div class="circle">🍮</div><span class="label">Sweet</span></div>
+  </div>
+
+  <!-- CHAMPION ITEMS -->
+  <div class="champs-head reveal">
+    <span class="eyebrow-tag">Fan Favorites</span>
+    <h2>Dishes people ask for again and again</h2>
   </div>
 
   <div class="menu-toggle reveal">
@@ -496,22 +548,124 @@
     <button id="btnNonVeg">Non-Veg</button>
   </div>
 
-  <div class="menu-grid menu-panel active" id="panelVeg">
-    <div class="menu-card"><div class="icon">🍚</div><h3>Rice / Kichuri</h3><p>Seasonal veg, potato, bori bhaja, tiler bora, chana bora, paneer chop or different bhartas & begunis.</p></div>
-    <div class="menu-card"><div class="icon">🥘</div><h3>Dal</h3><p>Masoor, mung, arhar or chana dal — a fresh pot every day.</p></div>
-    <div class="menu-card"><div class="icon">🥗</div><h3>Sabji</h3><p>Seasonal veg with different saag, posto, jhinge or aloo.</p></div>
-    <div class="menu-card"><div class="icon">🍛</div><h3>Main Course</h3><p>Paneer (sabji, makhani, matar, kadhai, malai) or chana bora jhol, tofu curry, kadhi pakoda, soya chaap, rajma or chole.</p></div>
-    <div class="menu-card"><div class="icon">🥒</div><h3>Chatni</h3><p>Seasonal chutney or achar to round off the plate.</p></div>
-    <div class="menu-card"><div class="icon">🍮</div><h3>Sweet</h3><p>Papad or fryums, salad, and a sweet to end the meal.</p></div>
+  <!-- VEG PANEL -->
+  <div class="champ-grid champ-panel active" id="panelVeg">
+    <div class="champ-card">
+      <div class="champ-photo"><img src="aloo-posto.jpg" alt="Aloo Posto"></div>
+      <div class="champ-body">
+        <h4>Aloo Posto</h4>
+        <p>Classic Bengali comfort food. Tender potatoes cooked in a rich, delicately sweet, and nutty poppy seed paste.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="kadahi-paneer.jpeg" alt="Kadahi Paneer"></div>
+      <div class="champ-body">
+        <h4>Kadahi Paneer</h4>
+        <p>Soft paneer cubes tossed with crisp bell peppers and onions in a freshly ground, aromatic spiced tomato gravy.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="chana-posto-borar-jhol.jpg" alt="Chana Bora Jhol"></div>
+      <div class="champ-body">
+        <h4>Chana Bora Jhol</h4>
+        <p>Traditional lentil dumplings simmered in a light, cumin-scented curry. A wholesome, home-style favorite.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="soya-chap-gravy.jpg" alt="Soya Chap Gravy"></div>
+      <div class="champ-body">
+        <h4>Soya Chap Gravy</h4>
+        <p>High-protein soya chaap cooked until tender in a robust, deeply spiced onion and tomato masala.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="chilli-mushroom.jpeg" alt="Chilli Mushroom"></div>
+      <div class="champ-body">
+        <h4>Chilli Mushroom</h4>
+        <p>A fiery and flavorful Indo-Chinese hit. Plump mushrooms tossed with green chilies, garlic, and soy.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="Baingan-bharta.webp" alt="Begun Bharta"></div>
+      <div class="champ-body">
+        <h4>Begun Bharta</h4>
+        <p>Smoky, fire-roasted eggplant mashed with mustard oil, pungent onions, and fresh green chilies.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="kachchaa-amer-chutney-bengali.jpg" alt="Kacha Amaer Chatni"></div>
+      <div class="champ-body">
+        <h4>Kacha Amaer Chatni</h4>
+        <p>A sweet, tangy, and refreshing raw mango chutney tempered with Bengali five-spice (panch phoron).</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="misti-doi.jpg" alt="Misti Doi"></div>
+      <div class="champ-body">
+        <h4>Misti Doi</h4>
+        <p>The quintessential Bengali dessert. Thick, creamy, caramelized sweet yogurt to perfectly round off your meal.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="menu-grid menu-panel" id="panelNonVeg">
-    <div class="menu-card"><div class="icon">🍚</div><h3>Rice / Kichuri</h3><p>Seasonal veg, potato, machher dim bora, chingri machher bora, different bhartas & bori bhaja.</p></div>
-    <div class="menu-card"><div class="icon">🥘</div><h3>Dal</h3><p>Masoor, mung, arhar or chana dal.</p></div>
-    <div class="menu-card"><div class="icon">🥗</div><h3>Sabji</h3><p>Seasonal veg with macher matha, different saag, posto, jhinge or aloo.</p></div>
-    <div class="menu-card"><div class="icon">🍛</div><h3>Main Course</h3><p>Egg (kosha or korma), chicken (kosha, dak bangalow, house special), or fish (ruhu, katla, sorshe, kalia, dahi fish, fish jhol).</p></div>
-    <div class="menu-card"><div class="icon">🥒</div><h3>Chatni</h3><p>Seasonal chutney or achar.</p></div>
-    <div class="menu-card"><div class="icon">🍮</div><h3>Sweet</h3><p>Papad or fryums, salad, and a sweet to end the meal.</p></div>
+  <!-- NON-VEG PANEL -->
+  <div class="champ-grid champ-panel" id="panelNonVeg">
+    <div class="champ-card">
+      <div class="champ-photo"><img src="macher-dimer-bora.jpeg" alt="Macher Dim r Bora"></div>
+      <div class="champ-body">
+        <h4>Macher Dim r Bora</h4>
+        <p>Crispy, golden fritters made from fresh fish roe mixed with finely chopped onions, green chilies, and aromatic spices.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="macher-mathar-dal.jpg" alt="Macher Mathar Dal"></div>
+      <div class="champ-body">
+        <h4>Macher Mathar Dal</h4>
+        <p>A rich and comforting Bengali classic — roasted fish head slow-cooked with spiced moong dal, finished with ghee and warm spices.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="egg-kosha.jpeg" alt="Egg Kosha"></div>
+      <div class="champ-body">
+        <h4>Egg Kosha</h4>
+        <p>Hard-boiled eggs pan-fried and enveloped in a thick, deeply caramelized, and spicy onion-tomato gravy.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="chicken-patla-jhol.jpeg" alt="Chicken Patla Jhol"></div>
+      <div class="champ-body">
+        <h4>Chicken Patla Jhol</h4>
+        <p>A light, soupy, and incredibly comforting chicken curry cooked with large chunks of potatoes. True weekend nostalgia.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="chicken-dak-bunglow.jpg" alt="Chicken Dak Bunglow"></div>
+      <div class="champ-body">
+        <h4>Chicken Dak Bunglow</h4>
+        <p>A heritage recipe featuring slow-cooked chicken and potatoes in a rich gravy, finished with a boiled egg.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="doi-katla.jpg" alt="Doi Katla"></div>
+      <div class="champ-body">
+        <h4>Doi Katla</h4>
+        <p>Premium Katla fish steaks gently simmered in a smooth, mildly spiced, and luscious yogurt-based gravy.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="rui-macher-patla-jhol.jpeg" alt="Rui Macher Patla Jhol"></div>
+      <div class="champ-body">
+        <h4>Rui Macher Patla Jhol</h4>
+        <p>A light, everyday Rohu fish stew cooked with seasonal vegetables and basic spices. Pure, healthy comfort.</p>
+      </div>
+    </div>
+    <div class="champ-card">
+      <div class="champ-photo"><img src="lal-misti.jpg" alt="Lal Misti / Gulab Jamun"></div>
+      <div class="champ-body">
+        <h4>Lal Misti / Gulab Jamun</h4>
+        <p>Soft, melt-in-your-mouth deep-fried milk dumplings soaked in a warm, fragrant cardamom sugar syrup.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -528,7 +682,7 @@
     <div class="trial-hero-text">
       <h3>Not sure yet? Try 2 days.</h3>
       <p>First-time customers only. Try once, you'll never regret it.</p>
-      <p class="fine">One coupon per customer · Starts 1st September 2026</p>
+      <p class="fine">One coupon per customer</p>
     </div>
     <div class="trial-hero-prices">
       <div class="trial-price-chip">
@@ -567,7 +721,6 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <!-- Razorpay Link Placeholder -->
         <a href="#contact" class="plan-cta">Choose Veg Weekly</a>
       </div>
 
@@ -701,12 +854,17 @@
   <div class="section-head reveal">
     <span class="eyebrow-tag">Get In Touch</span>
     <h2>Ready for your first tiffin?</h2>
-    <p>Message us on WhatsApp to pick a plan, or drop a comment on Instagram — we'll set up your delivery from 1st September.</p>
+    <p>Message us on WhatsApp to pick a plan, or drop a comment on Instagram — we'll set up your delivery right away.</p>
   </div>
   <div class="contact-btns reveal">
-    <!-- WhatsApp pre-filled template link -->
-    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
-    <a href="https://instagram.com/tiffindada_official" class="btn-outline-white" target="_blank" rel="noopener noreferrer">📸 @tiffindada_official</a>
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+      <img src="WhatsApp.svg.webp" alt="WhatsApp" style="width:24px; height:24px; object-fit:contain;">
+      Book your tiffin
+    </a>
+    <a href="https://instagram.com/tiffindada_official" class="btn-outline-white" target="_blank" rel="noopener noreferrer">
+      <img src="images (7).jpeg" alt="Instagram" style="width:24px; height:24px; border-radius:4px; object-fit:cover;">
+      @tiffindada_official
+    </a>
   </div>
 </section>
 
