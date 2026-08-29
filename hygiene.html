@@ -26,7 +26,7 @@
     font-family:'Poppins', 'Segoe UI', sans-serif;
     background:var(--cream);
     color:var(--brown);
-    overflow-x:hidden;
+    overflow-x:clip;
   }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
@@ -50,8 +50,8 @@
     padding:10px 6vw;
   }
   .nav-logo{display:flex; align-items:center; gap:12px;}
-  .nav-logo .logo-dot{width:44px; height:44px; border-radius:50%; border:2px solid var(--maroon); background:var(--turmeric); display:flex; align-items:center; justify-content:center; font-size:1.3rem;}
-  .nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.4rem; color:var(--maroon); font-weight:700;}
+  .nav-logo img{width:52px; height:52px; border-radius:50%; border:2px solid var(--maroon); object-fit:cover;}
+  .nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.5rem; color:var(--maroon); font-weight:700;}
   .back-link{
     display:inline-flex; align-items:center; gap:8px;
     background:var(--maroon); color:var(--white); padding:10px 22px; border-radius:30px;
@@ -59,6 +59,17 @@
     transition:transform .15s;
   }
   .back-link:hover{transform:translateY(-2px);}
+  .nav-cta{
+    background:var(--maroon); color:var(--white); padding:10px 22px; border-radius:30px;
+    font-weight:700; font-size:0.9rem; box-shadow:var(--shadow); border:2px solid var(--brown);
+    transition:transform .15s; display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(-2px);}
+  @media(max-width:600px){
+    .nav-cta{padding:8px 14px; font-size:0.78rem;}
+    .nav-logo span{font-size:1.2rem;}
+    .nav-logo img{width:40px; height:40px;}
+  }
 
   section{padding:80px 6vw;}
   .section-head{text-align:center; max-width:640px; margin:0 auto 50px;}
@@ -200,16 +211,26 @@
 
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.visible{opacity:1; transform:translateY(0);}
+
+  /* ===== MOBILE POLISH ===== */
+  @media(max-width:600px){
+    section{padding:56px 6vw;}
+    .btn-primary,.btn-secondary{
+      padding:13px 24px; font-size:0.92rem; width:100%; justify-content:center;
+    }
+    .cta-btns{flex-direction:column; align-items:stretch;}
+    .day-stop .stop-circle{width:46px; height:46px; font-size:1.2rem;}
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">
     <img src="tiffin-dada-logo.png" alt="Tiffin Dada Logo" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
     <span>Tiffin Dada</span>
-  </div>
-  <a href="index.html" class="back-link">← Back to Home</a>
+  </a>
+  <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="nav-cta" target="_blank" rel="noopener noreferrer"><img src="tiffin-icon.png" alt="" style="width:20px; height:20px; object-fit:contain;">Book your tiffin now</a>
 </nav>
 
 <!-- HERO -->
@@ -408,16 +429,19 @@
 <!-- CTA -->
 <section class="hygiene-cta reveal">
   <h2>Ready to taste the difference?</h2>
-  <p>See today's menu and pick a plan that fits your day.</p>
+  <p>Pick a plan and we'll set up your daily delivery.</p>
   <div class="cta-btns">
-    <a href="index.html#menu" class="btn-primary">🍱 See Today's Menu</a>
+    <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="btn-primary" target="_blank" rel="noopener noreferrer"><img src="tiffin-icon.png" alt="" style="width:20px; height:20px; object-fit:contain;">Book Your Tiffin Now</a>
     <a href="index.html#plans" class="btn-secondary">View Plans</a>
+    <a href="index.html" class="btn-secondary">← Back to Home</a>
   </div>
 </section>
 
 <footer>
   <div class="foot-logo">Tiffin Dada</div>
-  <p>&copy; 2026 Tiffin Dada. Clean kitchen, honest food, in Kolkata.</p>
+  <p>Hygienic Home-Cooked Meal for Everyone · Kolkata, West Bengal</p>
+  <p style="margin-top:10px;">© 2026 Tiffin Dada. Clean kitchen, honest food, in Kolkata.</p>
+  <p style="margin-top:14px; font-size:0.78rem; opacity:0.6;">This website was designed &amp; deployed by <a href="https://wa.me/916295742491?text=Hi%20Surajit!%20I%20saw%20the%20Tiffin%20Dada%20website%20you%20designed." target="_blank" rel="noopener noreferrer" style="color:var(--turmeric); text-decoration:underline;">Surajit Das</a></p>
 </footer>
 
 <script>
