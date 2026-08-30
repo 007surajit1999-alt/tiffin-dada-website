@@ -324,9 +324,11 @@
   .trial-hero-text .fine{font-size:0.78rem; color:#d9a8a8; margin-top:6px;}
   .trial-hero-prices{display:flex; gap:14px; flex-wrap:wrap;}
   .trial-price-chip{
-    background:var(--turmeric); border:2px solid var(--brown); border-radius:14px;
-    padding:12px 20px; text-align:center; min-width:120px;
+    display:block; background:var(--turmeric); border:2px solid var(--brown); border-radius:14px;
+    padding:12px 20px; text-align:center; min-width:120px; text-decoration:none;
+    transition:transform .15s, box-shadow .15s;
   }
+  .trial-price-chip:hover{transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,0.25);}
   .trial-price-chip .label{font-size:0.78rem; font-weight:700; color:var(--brown); text-transform:uppercase;}
   .trial-price-chip .amount{font-family:'Baloo 2',sans-serif; font-size:1.5rem; font-weight:800; color:var(--maroon-deep);}
   .trial-price-chip .amount span{font-size:0.8rem; font-weight:600; color:var(--brown);}
@@ -400,12 +402,18 @@
   .basic-plan p.desc{font-size:0.9rem; color:#5a4433; margin-bottom:22px; max-width:640px;}
   .basic-options{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
   .basic-option{
-    border:2px solid var(--steel); border-radius:14px; padding:20px; background:var(--white);
+    display:block; border:2px solid var(--steel); border-radius:14px; padding:20px; background:var(--white);
+    transition:transform .15s, border-color .15s, box-shadow .15s; cursor:pointer; text-decoration:none;
   }
+  .basic-option:hover{transform:translateY(-3px); border-color:var(--maroon); box-shadow:var(--shadow);}
   .basic-option h4{font-size:1rem; color:var(--maroon); margin-bottom:8px;}
   .basic-option .price{font-family:'Baloo 2',sans-serif; font-size:1.5rem; font-weight:800; color:var(--brown);}
   .basic-option .price span{font-size:0.85rem; font-weight:400; color:#5a4433;}
   .basic-option .days-split{font-size:0.82rem; color:#5a4433; margin-top:8px; line-height:1.5;}
+  .basic-option .choose-line{
+    display:flex; align-items:center; gap:6px; margin-top:14px; padding-top:14px;
+    border-top:1px dashed var(--steel); font-weight:700; font-size:0.85rem; color:var(--maroon);
+  }
 
   .plans-footnote{max-width:1150px; margin:26px auto 0; font-size:0.8rem; color:#8a7560; text-align:center;}
 
@@ -924,14 +932,14 @@
       <p class="fine">One coupon per customer</p>
     </div>
     <div class="trial-hero-prices">
-      <div class="trial-price-chip">
+      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20try%20the%202-day%20Veg%20Trial%20(%E2%82%B9199/2%20days)." class="trial-price-chip" target="_blank" rel="noopener noreferrer">
         <div class="label">Veg Thali</div>
         <div class="amount">₹199<span>/2 days</span></div>
-      </div>
-      <div class="trial-price-chip">
+      </a>
+      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20try%20the%202-day%20Non-Veg%20Trial%20(%E2%82%B9249/2%20days)." class="trial-price-chip" target="_blank" rel="noopener noreferrer">
         <div class="label">Non-Veg Thali</div>
         <div class="amount">₹249<span>/2 days</span></div>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -960,7 +968,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="#contact" class="plan-cta">Choose Veg Weekly</a>
+                <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Veg%20Weekly%20plan%20(%E2%82%B9769/6%20days)." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Veg Weekly</a>
       </div>
 
       <div class="plan-card featured">
@@ -973,7 +981,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="#contact" class="plan-cta">Choose Standard Weekly</a>
+                <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Veg%20%2B%20Non-Veg%20Weekly%20plan%20(%E2%82%B9799/6%20days)." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Standard Weekly</a>
       </div>
 
       <div class="plan-card">
@@ -986,7 +994,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="#contact" class="plan-cta">Choose Non-Veg Weekly</a>
+                <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Non-Veg%20Weekly%20plan%20(%E2%82%B9899/6%20days)." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Non-Veg Weekly</a>
       </div>
     </div>
 
@@ -1002,7 +1010,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="#contact" class="plan-cta">Choose Veg Monthly</a>
+                <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Veg%20Monthly%20plan%20(%E2%82%B92599/26%20days)." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Veg Monthly</a>
       </div>
 
       <div class="plan-card featured">
@@ -1015,7 +1023,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="#contact" class="plan-cta">Choose Standard Monthly</a>
+                <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Veg%20%2B%20Non-Veg%20Monthly%20plan%20(%E2%82%B93199/26%20days)." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Standard Monthly</a>
       </div>
 
       <div class="plan-card">
@@ -1028,7 +1036,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="#contact" class="plan-cta">Choose Non-Veg Monthly</a>
+                <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Non-Veg%20Monthly%20plan%20(%E2%82%B93399/26%20days)." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Non-Veg Monthly</a>
       </div>
     </div>
 
@@ -1042,16 +1050,18 @@
     </div>
     <p class="desc">A fixed veg/non-veg pattern we set for you — no daily choosing, just the cheapest way to eat well all month.</p>
     <div class="basic-options">
-      <div class="basic-option">
+      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Basic%20Combo%20-%206%20Days/Week%20plan%20(%E2%82%B92799/26%20days)." class="basic-option" target="_blank" rel="noopener noreferrer">
         <h4>6 Days / Week</h4>
         <div class="price">₹2799<span>/26 days</span></div>
         <div class="days-split">Veg: Tue, Thu, Sat<br>Non-Veg: Mon, Wed, Fri</div>
-      </div>
-      <div class="basic-option">
+        <div class="choose-line">Choose this on WhatsApp →</div>
+      </a>
+      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20want%20to%20book%20the%20Basic%20Combo%20-%205%20Days/Week%20plan%20(%E2%82%B92399/22%20days)." class="basic-option" target="_blank" rel="noopener noreferrer">
         <h4>5 Days / Week</h4>
         <div class="price">₹2399<span>/22 days</span></div>
         <div class="days-split">Veg: Mon, Tue, Thu<br>Non-Veg: Wed, Fri</div>
-      </div>
+        <div class="choose-line">Choose this on WhatsApp →</div>
+      </a>
     </div>
   </div>
 
