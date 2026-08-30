@@ -53,23 +53,23 @@
     background:var(--cream);
     border-bottom:3px solid var(--brown);
     display:flex; align-items:center; justify-content:space-between;
-    padding:10px 6vw; gap:10px;
+    padding:10px 6vw;
   }
-  .nav-logo{display:flex; align-items:center; gap:10px; flex-shrink:0; min-width:0;}
-  .nav-logo img{width:48px; height:48px; border-radius:50%; border:2px solid var(--maroon); object-fit:cover; flex-shrink:0;}
-  .nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.4rem; color:var(--maroon); font-weight:700; white-space:nowrap;}
-  .nav-links{display:flex; gap:26px; font-weight:600; font-size:0.95rem;}
+  .nav-logo{display:flex; align-items:center; gap:12px;}
+  .nav-logo img{width:52px; height:52px; border-radius:50%; border:2px solid var(--maroon);}
+  .nav-logo span{font-family:'Baloo 2', sans-serif; font-size:1.5rem; color:var(--maroon); font-weight:700;}
+  .nav-links{display:flex; gap:28px; font-weight:600; font-size:0.95rem;}
   .nav-links a{position:relative; padding:4px 2px; transition:color .2s;}
   .nav-links a:hover{color:var(--maroon);}
   .nav-links a:focus-visible{outline:2px solid var(--maroon); outline-offset:3px; border-radius:3px;}
   .nav-cta{
-    background:var(--maroon); color:var(--white); padding:10px 20px; border-radius:30px;
+    background:var(--maroon); color:var(--white); padding:10px 22px; border-radius:30px;
     font-weight:700; font-size:0.9rem; box-shadow:var(--shadow); border:2px solid var(--brown);
-    transition:transform .15s; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; flex-shrink:0;
+    transition:transform .15s; display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
   }
   .nav-cta:hover{transform:translateY(-2px);}
   .nav-cta:focus-visible{outline:3px solid var(--brown); outline-offset:2px;}
-  .burger{display:none; font-size:1.5rem; background:none; border:none; color:var(--brown); cursor:pointer; padding:4px 6px; flex-shrink:0;}
+  .burger{display:none; font-size:1.6rem; background:none; border:none; color:var(--brown); cursor:pointer;}
 
   @media(max-width:820px){
     .nav-links{
@@ -79,21 +79,6 @@
     }
     .nav-links.open{display:flex;}
     .burger{display:block;}
-  }
-
-  @media(max-width:600px){
-    nav{padding:8px 4vw; gap:6px;}
-    .nav-logo{gap:7px;}
-    .nav-logo img{width:34px; height:34px;}
-    .nav-logo span{font-size:1rem;}
-    .nav-cta{padding:8px 12px; font-size:0.76rem; gap:5px;}
-    .nav-cta img{width:15px; height:15px;}
-    .burger{font-size:1.3rem;}
-  }
-
-  @media(max-width:360px){
-    .nav-logo span{font-size:0.88rem;}
-    .nav-cta{padding:7px 10px; font-size:0.7rem;}
   }
 
   /* ===== HERO ===== */
@@ -339,16 +324,12 @@
   .trial-hero-text .fine{font-size:0.78rem; color:#d9a8a8; margin-top:6px;}
   .trial-hero-prices{display:flex; gap:14px; flex-wrap:wrap;}
   .trial-price-chip{
-    display:block; background:var(--turmeric); border:2px solid var(--brown); border-radius:14px;
-    padding:12px 20px; text-align:center; min-width:120px; text-decoration:none;
-    transition:transform .15s, box-shadow .15s;
+    background:var(--turmeric); border:2px solid var(--brown); border-radius:14px;
+    padding:12px 20px; text-align:center; min-width:120px;
   }
-  .trial-price-chip:hover{transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,0.25);}
-  .trial-price-chip:focus-visible{outline:3px solid var(--white); outline-offset:2px;}
   .trial-price-chip .label{font-size:0.78rem; font-weight:700; color:var(--brown); text-transform:uppercase;}
   .trial-price-chip .amount{font-family:'Baloo 2',sans-serif; font-size:1.5rem; font-weight:800; color:var(--maroon-deep);}
   .trial-price-chip .amount span{font-size:0.8rem; font-weight:600; color:var(--brown);}
-  .trial-price-chip .tap-line{font-size:0.68rem; font-weight:700; color:var(--maroon-deep); margin-top:4px; letter-spacing:0.02em;}
 
   .plan-toggle{display:flex; justify-content:center; gap:0; margin:0 0 22px;}
   .plan-toggle button{
@@ -419,19 +400,12 @@
   .basic-plan p.desc{font-size:0.9rem; color:#5a4433; margin-bottom:22px; max-width:640px;}
   .basic-options{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
   .basic-option{
-    display:block; border:2px solid var(--steel); border-radius:14px; padding:20px; background:var(--white);
-    transition:transform .15s, border-color .15s, box-shadow .15s; cursor:pointer;
+    border:2px solid var(--steel); border-radius:14px; padding:20px; background:var(--white);
   }
-  .basic-option:hover{transform:translateY(-3px); border-color:var(--maroon); box-shadow:var(--shadow);}
-  .basic-option:focus-visible{outline:3px solid var(--maroon); outline-offset:2px;}
   .basic-option h4{font-size:1rem; color:var(--maroon); margin-bottom:8px;}
   .basic-option .price{font-family:'Baloo 2',sans-serif; font-size:1.5rem; font-weight:800; color:var(--brown);}
   .basic-option .price span{font-size:0.85rem; font-weight:400; color:#5a4433;}
   .basic-option .days-split{font-size:0.82rem; color:#5a4433; margin-top:8px; line-height:1.5;}
-  .basic-option .choose-line{
-    display:flex; align-items:center; gap:6px; margin-top:14px; padding-top:14px;
-    border-top:1px dashed var(--steel); font-weight:700; font-size:0.85rem; color:var(--maroon);
-  }
 
   .plans-footnote{max-width:1150px; margin:26px auto 0; font-size:0.8rem; color:#8a7560; text-align:center;}
 
@@ -499,6 +473,44 @@
     .plan-compare-strip{grid-template-columns:1fr; gap:20px;}
   }
 
+  /* ===== FULL MENU BREAKDOWN ===== */
+  .full-menu-section{background:var(--white); border-top:3px solid var(--brown);}
+  .full-menu-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px; max-width:1100px; margin:0 auto;
+  }
+  .full-menu-col{
+    background:var(--cream); border:3px solid var(--brown); border-radius:24px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .full-menu-col-head{
+    padding:18px; text-align:center; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.2rem;
+    color:var(--white); display:flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .full-menu-col.non-veg .full-menu-col-head{background:var(--maroon);}
+  .full-menu-col.veg .full-menu-col-head{background:var(--leaf);}
+  .full-menu-row{
+    display:flex; gap:14px; padding:16px 20px; border-bottom:1px dashed var(--steel);
+  }
+  .full-menu-row:last-child{border-bottom:none;}
+  .full-menu-row .icon{font-size:1.5rem; flex-shrink:0; width:34px; text-align:center;}
+  .full-menu-row .content h4{font-size:0.98rem; color:var(--maroon-deep); margin-bottom:3px;}
+  .full-menu-row .content p{font-size:0.83rem; color:#5a4433; line-height:1.5;}
+  .full-menu-footnotes{
+    display:flex; gap:14px; flex-wrap:wrap; justify-content:center; max-width:1000px; margin:32px auto 0;
+  }
+  .full-menu-footnotes span{
+    background:var(--cream); border:2px solid var(--brown); border-radius:20px; padding:10px 18px;
+    font-size:0.82rem; font-weight:700; color:var(--brown); text-align:center;
+  }
+  .full-menu-banner{
+    text-align:center; margin-top:24px; background:var(--turmeric); border:3px solid var(--brown);
+    border-radius:16px; padding:14px; font-weight:800; font-family:'Baloo 2',sans-serif; color:var(--brown);
+    max-width:600px; margin-left:auto; margin-right:auto;
+  }
+  @media(max-width:800px){
+    .full-menu-grid{grid-template-columns:1fr;}
+  }
+
   /* ===== WHY ===== */
   .why-section{background:var(--cream); border-top:3px solid var(--brown); border-bottom:3px solid var(--brown);}
   .why-grid{
@@ -563,11 +575,20 @@
       padding:13px 24px; font-size:0.92rem; width:100%; justify-content:center;
     }
     .hero-ctas, .contact-btns, .cta-btns{flex-direction:column; align-items:stretch;}
+    .nav-cta{padding:8px 14px; font-size:0.78rem; gap:5px;}
+    .nav-cta img{width:16px; height:16px;}
     .plan-cta{padding:11px; font-size:0.92rem;}
     .menu-toggle button, .plan-toggle button{padding:9px 20px; font-size:0.85rem;}
     .hero-eyebrow{font-size:0.72rem; padding:5px 12px;}
     .trial-hero{padding:22px 20px; flex-direction:column; align-items:stretch; text-align:center;}
     .trial-hero-prices{justify-content:center;}
+    .nav-logo span{font-size:1.2rem;}
+    .nav-logo img{width:40px; height:40px;}
+    nav{padding:8px 4vw; gap:8px;}
+  }
+  @media(max-width:380px){
+    .nav-cta{padding:7px 10px; font-size:0.72rem;}
+    .nav-logo span{font-size:1.05rem;}
   }
 </style>
 </head>
@@ -586,7 +607,7 @@
     <a href="hygiene.html">Hygiene</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="nav-cta" target="_blank" rel="noopener noreferrer"><img src="tiffin-icon.png" alt="" style="width:18px; height:18px; object-fit:contain;">Book now</a>
+  <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada!%20I%20am%20interested%20in%20a%20subscription." class="nav-cta" target="_blank" rel="noopener noreferrer"><img src="tiffin-icon.png" alt="" style="width:20px; height:20px; object-fit:contain;">Book now</a>
   <button class="burger" id="burgerBtn" aria-label="Toggle menu">☰</button>
 </nav>
 
@@ -652,14 +673,115 @@
   <!-- THALI ANATOMY -->
   <div class="thali-strip reveal">
     <div class="thali-item"><div class="circle">🍚</div><span class="label">Rice / Kichuri</span></div>
+    <div class="thali-item"><div class="circle">🍟</div><span class="label">Bhaja</span></div>
     <div class="thali-item"><div class="circle">🥘</div><span class="label">Dal</span></div>
-    <div class="thali-item"><div class="circle">🥗</div><span class="label">Sabji</span></div>
+    <div class="thali-item"><div class="circle">🥦</div><span class="label">Sabji</span></div>
     <div class="thali-item"><div class="circle">🍛</div><span class="label">Main Course</span></div>
-    <div class="thali-item"><div class="circle">🥒</div><span class="label">Chatni</span></div>
+    <div class="thali-item"><div class="circle">🍲</div><span class="label">Chatni</span></div>
     <div class="thali-item"><div class="circle">🍘</div><span class="label">Papad</span></div>
-    <div class="thali-item"><div class="circle">🥬</div><span class="label">Salad</span></div>
+    <div class="thali-item"><div class="circle">🥗</div><span class="label">Salad</span></div>
     <div class="thali-item"><div class="circle">🍮</div><span class="label">Sweet</span></div>
   </div>
+
+<!-- FULL MENU BREAKDOWN -->
+<section class="full-menu-section" id="full-menu">
+  <div class="section-head reveal">
+    <span class="eyebrow-tag">Category Breakdown</span>
+    <h2>Non-Veg vs Veg — item by item</h2>
+  </div>
+
+  <div class="full-menu-grid reveal">
+    <!-- NON-VEG -->
+    <div class="full-menu-col non-veg">
+      <div class="full-menu-col-head">🍗 Non-Veg Thali</div>
+      <div class="full-menu-row">
+        <div class="icon">🍚</div>
+        <div class="content"><h4>Rice / Kichuri</h4></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍟</div>
+        <div class="content"><h4>Bhaja</h4><p>Seasonal veg / Potato / Macher dimer Bora / Chingri macher Bora / Different types of Bharta / Bori Bhaja etc.</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🥣</div>
+        <div class="content"><h4>Dal</h4><p>Masoor / Mung / Arhar / Chana dal</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🥦</div>
+        <div class="content"><h4>Sabji</h4><p>Seasonal veg / Macher Math with Sabji / Different types of Saag / Posto (Jinge / Aloo) etc.</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍛</div>
+        <div class="content">
+          <h4>Main Course</h4>
+          <p><strong>Egg</strong> – Egg Kosha / Egg Korma<br>OR<br><strong>Chicken</strong> – Chicken Kosha / Chicken Patla Jhol / Chicken Dak Bangalow / Chicken House Special etc.<br>OR<br><strong>Fish</strong> (Rui / Katla) – Sorshe Mach / Fish Kalia / Dahi Fish / Fish Jhol etc.</p>
+        </div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍲</div>
+        <div class="content"><h4>Chatni</h4><p>Seasonal, or Achaar</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍘</div>
+        <div class="content"><h4>Papad or Fryums</h4></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🥗</div>
+        <div class="content"><h4>Salad</h4></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍮</div>
+        <div class="content"><h4>Sweet</h4></div>
+      </div>
+    </div>
+
+    <!-- VEG -->
+    <div class="full-menu-col veg">
+      <div class="full-menu-col-head">🌿 Veg Thali</div>
+      <div class="full-menu-row">
+        <div class="icon">🍚</div>
+        <div class="content"><h4>Rice / Kichuri</h4></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍟</div>
+        <div class="content"><h4>Bhaja</h4><p>Seasonal veg / Potato / Bori Bhaja / Tiler Bora / Chana Bora / Paneer Chop / Different types of Bharta / Beguni etc.</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🥣</div>
+        <div class="content"><h4>Dal</h4><p>Masoor / Mung / Arhar / Chana dal</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🥦</div>
+        <div class="content"><h4>Sabji</h4><p>Seasonal veg / Different types of Saag / Posto (Jinge / Aloo) etc.</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍛</div>
+        <div class="content">
+          <h4>Main Course</h4>
+          <p><strong>Paneer</strong> – Sahi / Makhni / Matar / Kadhai / Malai<br>OR Chana Bora Jhol / Tofu Curry / Kadhi Pakoda Gravy / Soya Chaap Gravy / Rajma / Chole etc.<br>OR <strong>Mushroom</strong> – Chilly / Sahi / Makhni etc.</p>
+        </div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍲</div>
+        <div class="content"><h4>Chatni</h4><p>Seasonal, or Achaar</p></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍘</div>
+        <div class="content"><h4>Papad or Fryums</h4></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🥗</div>
+        <div class="content"><h4>Salad</h4></div>
+      </div>
+      <div class="full-menu-row">
+        <div class="icon">🍮</div>
+        <div class="content"><h4>Sweet</h4></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-menu-banner reveal">🍱 Try for a week — you will not regret it!</div>
+</section>
 
   <!-- CHAMPION ITEMS -->
   <div class="champs-head reveal">
@@ -809,16 +931,14 @@
       <p class="fine">One coupon per customer</p>
     </div>
     <div class="trial-hero-prices">
-      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20try%20the%202-day%20Veg%20Trial%20%28%E2%82%B9199/2%20days%29." class="trial-price-chip" target="_blank" rel="noopener noreferrer">
+      <div class="trial-price-chip">
         <div class="label">Veg Thali</div>
         <div class="amount">₹199<span>/2 days</span></div>
-        <div class="tap-line">Tap to claim →</div>
-      </a>
-      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20try%20the%202-day%20Non-Veg%20Trial%20%28%E2%82%B9249/2%20days%29." class="trial-price-chip" target="_blank" rel="noopener noreferrer">
+      </div>
+      <div class="trial-price-chip">
         <div class="label">Non-Veg Thali</div>
         <div class="amount">₹249<span>/2 days</span></div>
-        <div class="tap-line">Tap to claim →</div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -847,7 +967,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Veg%20Weekly%20plan%20%28%E2%82%B9769/6%20days%29." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Veg Weekly</a>
+        <a href="#contact" class="plan-cta">Choose Veg Weekly</a>
       </div>
 
       <div class="plan-card featured">
@@ -860,7 +980,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Veg%20%2B%20Non-Veg%20Weekly%20plan%20%28%E2%82%B9799/6%20days%29." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Standard Weekly</a>
+        <a href="#contact" class="plan-cta">Choose Standard Weekly</a>
       </div>
 
       <div class="plan-card">
@@ -873,7 +993,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Non-Veg%20Weekly%20plan%20%28%E2%82%B9899/6%20days%29." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Non-Veg Weekly</a>
+        <a href="#contact" class="plan-cta">Choose Non-Veg Weekly</a>
       </div>
     </div>
 
@@ -889,7 +1009,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Veg%20Monthly%20plan%20%28%E2%82%B92599/26%20days%29." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Veg Monthly</a>
+        <a href="#contact" class="plan-cta">Choose Veg Monthly</a>
       </div>
 
       <div class="plan-card featured">
@@ -902,7 +1022,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Veg%20%2B%20Non-Veg%20Monthly%20plan%20%28%E2%82%B93199/26%20days%29." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Standard Monthly</a>
+        <a href="#contact" class="plan-cta">Choose Standard Monthly</a>
       </div>
 
       <div class="plan-card">
@@ -915,7 +1035,7 @@
           <li>Delivered to your office desk</li>
           <li>No delivery charges, no processing fees</li>
         </ul>
-        <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Non-Veg%20Monthly%20plan%20%28%E2%82%B93399/26%20days%29." class="plan-cta" target="_blank" rel="noopener noreferrer">Choose Non-Veg Monthly</a>
+        <a href="#contact" class="plan-cta">Choose Non-Veg Monthly</a>
       </div>
     </div>
 
@@ -929,18 +1049,16 @@
     </div>
     <p class="desc">A fixed veg/non-veg pattern we set for you — no daily choosing, just the cheapest way to eat well all month.</p>
     <div class="basic-options">
-      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Basic%20Combo%20-%206%20Days/Week%20plan%20%28%E2%82%B92799/26%20days%29." class="basic-option" target="_blank" rel="noopener noreferrer">
+      <div class="basic-option">
         <h4>6 Days / Week</h4>
         <div class="price">₹2799<span>/26 days</span></div>
         <div class="days-split">Veg: Tue, Thu, Sat<br>Non-Veg: Mon, Wed, Fri</div>
-        <div class="choose-line">Choose this on WhatsApp →</div>
-      </a>
-      <a href="https://wa.me/919038231121?text=Hi%20Tiffin%20Dada%21%20I%20want%20to%20book%20the%20Basic%20Combo%20-%205%20Days/Week%20plan%20%28%E2%82%B92399/22%20days%29." class="basic-option" target="_blank" rel="noopener noreferrer">
+      </div>
+      <div class="basic-option">
         <h4>5 Days / Week</h4>
         <div class="price">₹2399<span>/22 days</span></div>
         <div class="days-split">Veg: Mon, Tue, Thu<br>Non-Veg: Wed, Fri</div>
-        <div class="choose-line">Choose this on WhatsApp →</div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -1026,6 +1144,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- WHY -->
 <section class="why-section" id="why">
